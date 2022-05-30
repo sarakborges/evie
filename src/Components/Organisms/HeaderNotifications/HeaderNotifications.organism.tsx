@@ -1,4 +1,4 @@
-import React, { ElementRef, FC, useRef } from 'react'
+import React, { ElementRef, FC, Fragment, useRef } from 'react'
 import { Bell } from '@styled-icons/entypo/Bell'
 
 import { NotificationsMock } from 'Assets/Mocks'
@@ -36,8 +36,12 @@ export const HeaderNotifications: FC = () => {
         {notifications.length > 0 ? (
           <Styled.NotificationsList>
             {notifications.map((notificationItem) => {
-              return notificationComponents[notificationItem.type](
-                notificationItem
+              return (
+                <Fragment key={notificationItem._id}>
+                  {notificationComponents[notificationItem.type](
+                    notificationItem
+                  )}
+                </Fragment>
               )
             })}
           </Styled.NotificationsList>
