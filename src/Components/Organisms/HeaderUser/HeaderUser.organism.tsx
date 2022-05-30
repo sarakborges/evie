@@ -40,6 +40,7 @@ export const HeaderUser: FC = () => {
             image={currentProfile?.picture}
             alt={currentProfile?.name}
             size={40}
+            hasBorder
           />
 
           <Styled.ProfileText>

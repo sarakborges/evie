@@ -17,8 +17,8 @@ export const Dropdown = forwardRef<
     toggleDropdown: () => void
   },
   DropdownProps
->((props, ref) => {
-  const { children, wrapperRef, hasCloseButton, title } = props
+>((dropdownProps, dropdownRef) => {
+  const { children, wrapperRef, hasCloseButton, title } = dropdownProps
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -42,7 +42,7 @@ export const Dropdown = forwardRef<
   }
 
   useImperativeHandle(
-    ref,
+    dropdownRef,
 
     () => ({
       toggleDropdown,
@@ -75,3 +75,5 @@ export const Dropdown = forwardRef<
     </Styled.Dropdown>
   )
 })
+
+Dropdown.displayName = 'Dropdown'
