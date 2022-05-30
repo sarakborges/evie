@@ -1,9 +1,8 @@
-import { HeaderUser } from 'Components/Molecules'
-
 import {
   HeaderNotifications,
   HeaderSettings,
   HeaderMessages,
+  HeaderUser,
 } from 'Components/Organisms'
 
 export const HEADER_NAV_COMPONENTS = [

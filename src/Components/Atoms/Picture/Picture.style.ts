@@ -11,6 +11,7 @@ export const Picture = styled.div<PictureDivProps>`
   place-items: center;
 
   width: ${({ size }) => `${size || 40}px`};
+  min-width: ${({ size }) => `${size || 40}px`};
 
   > :is(img, svg) {
     max-width: 100%;

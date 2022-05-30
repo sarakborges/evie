@@ -16,8 +16,7 @@ export const Dropdown = styled.div<DropdownStyleProps>`
   z-index: 1;
 
   width: 360px;
-  max-height: 400px;
-  min-height: 56px;
+  min-height: 44px;
   overflow: hidden;
   overflow-y: auto;
 

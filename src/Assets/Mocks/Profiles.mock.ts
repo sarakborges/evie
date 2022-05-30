@@ -75,4 +75,25 @@ export const ProfilesMock: ProfileProps[] = [
     url: `techeirab`,
     picture: `https://pbs.twimg.com/profile_images/1530284761008177154/K8j_IOVp_400x400.jpg`,
   },
+
+  {
+    _id: '6',
+    name: `KOVU`,
+    url: `_kovuzin_`,
+    picture: `https://pbs.twimg.com/profile_images/1517619310159712259/T8Chbvxg_400x400.jpg`,
+  },
+
+  {
+    _id: '7',
+    name: `Thiago Lanza`,
+    url: `lanzathi`,
+    picture: `https://pbs.twimg.com/profile_images/1463619636856070154/G7hwmFIJ_400x400.jpg`,
+  },
+
+  {
+    _id: '8',
+    name: `𝑙𝑖𝑎.`,
+    url: `dajisgrace`,
+    picture: `https://pbs.twimg.com/profile_images/1531044970643202049/tK5DTw1F_400x400.jpg`,
+  },
 ]

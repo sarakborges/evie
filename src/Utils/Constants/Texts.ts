@@ -15,6 +15,10 @@ export const GROUPS = {
   NONE: `You currently do not participate of any groups.`,
 }
 
+export const PROFILE = {
+  TITLE: `Hello, [name]!`,
+}
+
 export const NOTIFICATIONS = {
   TITLE: `Notifications`,
   NONE: `Nothing demanding your attention right now.`,
