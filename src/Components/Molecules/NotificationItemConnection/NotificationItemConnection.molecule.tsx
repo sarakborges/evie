@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import Link from 'next/link'
 
 import { CONNECTIONS, NOTIFICATIONS, ROUTES } from 'Utils/Constants'
-import { GetTimeString } from 'Utils/Functions'
+import { getTimeString } from 'Utils/Functions'
 
 import { Button, Picture, Text } from 'Components/Atoms'
 
@@ -19,17 +19,15 @@ export const NotificationItemConnection: FC<
 
   return (
     <Styled.NotificationItem>
-      <Styled.ProfilePicture>
-        <Link href={profileLink}>
-          <a>
-            <Picture
-              image={notification.profile.picture}
-              alt={notification.profile.name}
-              size={48}
-            />
-          </a>
-        </Link>
-      </Styled.ProfilePicture>
+      <Link href={profileLink}>
+        <a>
+          <Picture
+            image={notification.profile.picture}
+            alt={notification.profile.name}
+            size={48}
+          />
+        </a>
+      </Link>
 
       <Styled.NotificationText>
         <div>
@@ -50,7 +48,7 @@ export const NotificationItemConnection: FC<
         </Styled.NotificationButtons>
 
         <Text fs="12px" fc="grayMedium">
-          {GetTimeString(notification.time)}
+          {getTimeString(notification.time)}
         </Text>
       </Styled.NotificationText>
     </Styled.NotificationItem>

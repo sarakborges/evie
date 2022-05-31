@@ -1,4 +1,4 @@
-export const GetTimeString = (date: Date) => {
+export const getTimeString = (date: Date) => {
   return date.toLocaleDateString('pt-br', {
     year: 'numeric',
     month: 'long',

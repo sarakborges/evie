@@ -14,12 +14,6 @@ export const HEADER_NAV = [
   },
 
   {
-    TEXT: ROUTES.MESSAGES.TITLE,
-    LINK: ROUTES.MESSAGES.PATH,
-    ACTIVE_AT: [ROUTES.MESSAGES.PATH],
-  },
-
-  {
     TEXT: ROUTES.CONNECTIONS.TITLE,
     LINK: ROUTES.CONNECTIONS.PATH.replace('[url]', ''),
     ACTIVE_AT: [ROUTES.CONNECTIONS.PATH.replace('[url]', '')],

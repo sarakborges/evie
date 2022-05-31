@@ -13,10 +13,6 @@ export const NotificationItem = styled.div`
   }
 `
 
-export const ProfilePicture = styled.div`
-  min-width: 48px;
-`
-
 export const NotificationText = styled.div`
   display: flex;
   flex-flow: column;

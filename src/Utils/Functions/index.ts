@@ -1,1 +1,1 @@
-export { GetTimeString } from './GetTimeString'
+export { getTimeString } from './GetTimeString'
