@@ -1,6 +1,16 @@
 export const ROUTES = {
+  LOGIN: {
+    PATH: '/login',
+    TITLE: 'Log in',
+  },
+
+  REGISTER: {
+    PATH: '/register',
+    TITLE: 'Register',
+  },
+
   HOME: {
-    PATH: '/home',
+    PATH: '/',
     TITLE: 'Home',
   },
 

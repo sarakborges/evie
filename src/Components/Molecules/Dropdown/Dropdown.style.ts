@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 const DropdownCss = css`
   & + button {
-    background-color: var(--purpleMediumDark);
+    background-color: var(--purpleDark2);
   }
 `
 
@@ -21,7 +21,7 @@ export const Dropdown = styled.div<DropdownStyleProps>`
   overflow-y: auto;
 
   border-radius: 16px 0 16px 16px;
-  background-color: var(--purpleMediumDark);
+  background-color: var(--purpleDark2);
 
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};

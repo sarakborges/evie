@@ -6,10 +6,10 @@ const PrimaryButton = css`
 
   color: var(--grayLight);
 
-  &:hover {
-    background-color: var(--grayLight);
+  transition: box-shadow 0.3s;
 
-    color: var(--purple);
+  &:hover {
+    box-shadow: 0 1px 8px var(--purpleDark2);
   }
 `
 
@@ -17,7 +17,7 @@ const DarkButton = css`
   background-color: var(--purpleMedium);
 
   &:hover {
-    background-color: var(--purpleMediumDark);
+    background-color: var(--purpleDark2);
   }
 `
 
@@ -25,7 +25,7 @@ const TransparentButton = css`
   background-color: transparent;
 
   &:hover {
-    background-color: var(--purpleMediumDark);
+    background-color: var(--purpleDark2);
   }
 `
 

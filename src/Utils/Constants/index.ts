@@ -1,4 +1,3 @@
-export { SITE_NAME } from './SiteName'
 export { ROUTES } from './Routes'
 export { HEADER_NAV } from './HeaderNav'
 export { HEADER_NAV_COMPONENTS } from './HeaderNavComponents'

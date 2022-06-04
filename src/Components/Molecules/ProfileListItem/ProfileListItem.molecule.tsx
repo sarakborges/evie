@@ -1,4 +1,5 @@
 import React, { FC, Fragment } from 'react'
+import { SwitchHorizontal } from '@styled-icons/heroicons-solid/SwitchHorizontal'
 import { Pencil } from '@styled-icons/boxicons-solid/Pencil'
 import { TrashFill } from '@styled-icons/bootstrap/TrashFill'
 
@@ -12,6 +13,12 @@ export const ProfileListItem: FC<ProfileListItemProps> = ({
   buttons,
 }) => {
   const buttonsComponents = {
+    select: () => (
+      <Button rounded dark>
+        <SwitchHorizontal />
+      </Button>
+    ),
+
     edit: () => (
       <Button rounded dark>
         <Pencil />

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { HomeSidebarListProps } from './HomeSidebarList.props'
 
-import { CONNECTIONS, GROUPS, ROUTES, SEE_ALL_TEXT } from 'Utils/Constants'
+import { CONNECTIONS, GROUPS, ROUTES } from 'Utils/Constants'
 
 import { Text, Picture } from 'Components/Atoms'
 
@@ -27,7 +27,7 @@ export const HomeSidebarList: FC<HomeSidebarListProps> = ({ list, type }) => {
             : ROUTES.GROUPS
           ).PATH.replace('[url]', '')}
         >
-          <a>{SEE_ALL_TEXT}</a>
+          <a>{(type === 'connections' ? CONNECTIONS : GROUPS).SEE_ALL}</a>
         </Link>
       </Styled.ListTitle>
 

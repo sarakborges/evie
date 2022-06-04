@@ -5,22 +5,22 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
 
   :root {
-    --purple: hsla(255, 50%, 50%, 100%);
-    --purpleDark: hsla(255, 20%, 15%, 100%);
-    --purpleMediumDark: hsla(255, 20%, 20%, 100%);
-    --purpleMedium: hsla(255, 20%, 30%, 100%);
-    --purpleMediumLight: hsla(255, 50%, 70%, 100%);
-    --purpleLight: hsla(255, 50%, 90%, 100%);
+    --purple: hsl(255 50% 50% / 100%);
 
-    --grayLight: hsl(0, 0%, 95%, 100%);
-    --grayMedium: hsl(0, 0%, 50%, 100%);
+    --purpleDark1: hsl(255 20% 15% / 100%);
+    --purpleDark2: hsl(255 20% 20% / 100%);
 
-    --white: hsl(0, 0%, 100%, 100%);
-    --white5: hsl(0, 0%, 100%, 5%);
+    --purpleMedium: hsl(255 20% 30% / 100%);
+
+    --purpleLight1: hsl(255 50% 90% / 100%);
+    --purpleLight2: hsl(255 50% 70% / 100%);
+
+    --grayLight: hsl(0 0% 95% / 100%);
+    --grayMedium: hsl(0 0% 50% / 100%);
   }
 
   body {
-    background-color: var(--purpleDark);
+    background-color: var(--purpleDark1);
     
     font-family: "Roboto", sans-serif;
     color: var(--grayLight);
@@ -29,13 +29,15 @@ export const GlobalStyle = createGlobalStyle`
     * {
       box-sizing: border-box;
       scrollbar-width: thin;
+      outline: none;
       
       font-family: inherit;
+      color: inherit;
+      letter-spacing: inherit;
     }
 
     a {
       text-decoration: none;
-      color: inherit
     }
   }
 `

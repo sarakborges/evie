@@ -10,6 +10,9 @@ export const ProfileItem = styled.div`
 `
 
 export const ProfileButtons = styled.div`
+  display: flex;
+  gap: 8px;
+
   > button {
     aspect-ratio: 1;
 

@@ -4,9 +4,11 @@ import { ButtonProps } from './Button.props'
 
 import * as Styled from './Button.style'
 
-export const Button: FC<ButtonProps> = ({ type, children, ...props }) => {
+export const Button: FC<ButtonProps> = ({ children, ...props }) => {
+  const { type } = props
+
   return (
-    <Styled.Button type={type || 'button'} {...props}>
+    <Styled.Button {...props} type={type || 'button'}>
       {children}
     </Styled.Button>
   )

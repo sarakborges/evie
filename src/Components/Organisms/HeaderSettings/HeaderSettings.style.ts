@@ -20,7 +20,7 @@ export const ThemeOptions = styled.div`
   padding: 8px;
   margin: 0 12px;
 
-  background-color: var(--purpleDark);
+  background-color: var(--purpleDark1);
   border-radius: 22px;
 
   > button {

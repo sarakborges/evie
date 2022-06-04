@@ -8,11 +8,11 @@ export const ProfilesList = styled.div`
   overflow: hidden;
   overflow-y: auto;
 
-  > button {
-    padding: 0;
+  > div {
+    transition: background-color 0.3s;
 
     &:hover {
-      background-color: var(--purpleMedium);
+      background-color: var(--purpleDark1);
     }
   }
 `

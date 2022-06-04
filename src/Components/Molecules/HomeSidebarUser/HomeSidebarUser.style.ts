@@ -17,7 +17,7 @@ export const User = styled.div`
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: var(--purpleDark);
+      background-color: var(--purpleDark1);
     }
   }
 `

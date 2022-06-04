@@ -20,9 +20,11 @@ export const ProfilesList: FC = () => {
     <Styled.ProfilesList>
       {profilesList.map((profileItem) => {
         return (
-          <Button key={profileItem?._id} transparent>
-            <ProfileListItem profile={profileItem} buttons={['delete']} />
-          </Button>
+          <ProfileListItem
+            key={profileItem?._id}
+            profile={profileItem}
+            buttons={['select', 'delete']}
+          />
         )
       })}
     </Styled.ProfilesList>

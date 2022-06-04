@@ -12,7 +12,7 @@ export const Header = styled.header`
 
   height: 64px;
 
-  background-color: var(--purpleDark);
+  background-color: var(--purpleDark1);
 `
 
 export const HeaderCorner = styled.aside`
@@ -43,7 +43,7 @@ export const Logo = styled.div`
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: var(--purpleMediumDark);
+      background-color: var(--purpleDark2);
     }
   }
 `

@@ -23,7 +23,7 @@ export const Picture = styled.div<PictureDivProps>`
     border: ${({ borderWidth }) => `${borderWidth || 1}px`} solid
       ${({ hasBorder }) => (hasBorder ? 'var(--purple)' : 'transparent')};
     border-radius: 50%;
-    background-color: var(--purpleMediumDark);
+    background-color: var(--purpleDark2);
 
     color: var(--grayLight);
   }

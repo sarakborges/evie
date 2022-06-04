@@ -23,7 +23,7 @@ export const NotificationText = styled.div`
 
 export const ProfileName = styled.span`
   > a {
-    color: var(--purpleMediumLight);
+    color: var(--purpleLight2);
   }
 `
 

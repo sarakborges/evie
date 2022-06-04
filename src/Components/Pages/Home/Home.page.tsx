@@ -10,7 +10,7 @@ export const HomePage: FC = () => {
   return (
     <Authed>
       <Head>
-        <title>{`${SITE_NAME.TITLE}${ROUTES.HOME.TITLE}`}</title>
+        <title>{`${SITE_NAME.PAGE_TITLE}${ROUTES.HOME.TITLE}`}</title>
       </Head>
 
       <HomeTemplate />
