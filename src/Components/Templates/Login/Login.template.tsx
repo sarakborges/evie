@@ -31,6 +31,7 @@ export const LoginTemplate: FC = () => {
             {LOGIN.FORM.map((loginFormItem) => {
               return (
                 <Input
+                  key={loginFormItem.ID}
                   id={loginFormItem.ID}
                   type={loginFormItem.TYPE}
                   label={loginFormItem.LABEL}

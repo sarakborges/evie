@@ -2,7 +2,6 @@ import React, { FC, useContext } from 'react'
 
 import { UserContext } from 'Contexts'
 
-import { Button } from 'Components/Atoms'
 import { ProfileListItem } from 'Components/Molecules/ProfileListItem'
 
 import * as Styled from './ProfilesList.style'
