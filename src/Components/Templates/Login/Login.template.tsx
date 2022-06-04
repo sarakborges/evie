@@ -1,14 +1,23 @@
-import React, { FC } from 'react'
+import React, { FC, FormEvent } from 'react'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 import { LOGIN, ROUTES } from 'Utils/Constants'
 
-import { Button, Text } from 'Components/Atoms'
+import { Button, Form, Text } from 'Components/Atoms'
 import { Input } from 'Components/Molecules'
 
 import * as Styled from './Login.style'
-import Link from 'next/link'
 
 export const LoginTemplate: FC = () => {
+  const router = useRouter()
+
+  const doLogin = (e: FormEvent<HTMLFormElement>) => {
+    console.log(e.target)
+
+    router.push(ROUTES.HOME.PATH)
+  }
+
   return (
     <Styled.LoginTemplate>
       <Styled.LoginText>
@@ -23,11 +32,7 @@ export const LoginTemplate: FC = () => {
             {LOGIN.SIGNIN}
           </Text>
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault()
-            }}
-          >
+          <Form onSubmit={doLogin}>
             {LOGIN.FORM.map((loginFormItem) => {
               return (
                 <Input
@@ -43,7 +48,7 @@ export const LoginTemplate: FC = () => {
             <Button type="submit" primary>
               {LOGIN.SUBMIT}
             </Button>
-          </form>
+          </Form>
 
           <Styled.NotRegistered>
             <Link href={ROUTES.REGISTER.PATH}>

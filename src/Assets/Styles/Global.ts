@@ -6,6 +6,8 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     --purple: hsl(255 50% 50% / 100%);
+    
+    --redLight: hsl(335 100% 70% / 100%);
 
     --purpleDark1: hsl(255 20% 15% / 100%);
     --purpleDark2: hsl(255 20% 20% / 100%);

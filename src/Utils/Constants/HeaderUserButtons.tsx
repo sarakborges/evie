@@ -1,8 +1,8 @@
 import { UserPlus } from '@styled-icons/fa-solid/UserPlus'
 import { Cog } from '@styled-icons/heroicons-solid/Cog'
-import { Logout } from '@styled-icons/material-outlined/Logout'
 
 import { Button } from 'Components/Atoms'
+import { HeaderLogout } from 'Components/Molecules'
 
 export const HEADER_USER_BUTTONS = [
   {
@@ -27,11 +27,6 @@ export const HEADER_USER_BUTTONS = [
 
   {
     _id: 'logout',
-    component: () => (
-      <Button transparent>
-        <Logout />
-        <>Log out</>
-      </Button>
-    ),
+    component: () => <HeaderLogout />,
   },
 ]

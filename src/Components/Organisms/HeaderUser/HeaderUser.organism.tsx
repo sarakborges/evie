@@ -16,7 +16,7 @@ export const HeaderUser: FC = () => {
   const dropdownWrapperRef = useRef<HTMLDivElement>(null)
 
   const {
-    userState: { currentProfile },
+    userState: { currentProfile, name },
   } = useContext(UserContext)
 
   return (
@@ -24,7 +24,7 @@ export const HeaderUser: FC = () => {
       <Dropdown
         ref={dropdownRef}
         wrapperRef={dropdownWrapperRef}
-        title={PROFILE.TITLE.replace('[name]', currentProfile?.name)}
+        title={PROFILE.TITLE.replace('[name]', name)}
         hasCloseButton
       >
         <ProfileListItem profile={currentProfile} buttons={['edit']} />

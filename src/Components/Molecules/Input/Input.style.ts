@@ -7,6 +7,8 @@ export const InputWrapper = styled.div`
 
   position: relative;
 
+  width: 100%;
+
   > button {
     position: absolute;
     right: 0;

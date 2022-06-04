@@ -13,6 +13,19 @@ const PrimaryButton = css`
   }
 `
 
+const SecondaryButton = css`
+  background-color: var(--grayLight);
+  border-radius: 4px;
+
+  color: var(--purple);
+
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 1px 8px var(--purpleDark2);
+  }
+`
+
 const DarkButton = css`
   background-color: var(--purpleMedium);
 
@@ -31,6 +44,7 @@ const TransparentButton = css`
 
 interface ButtonStyleProps {
   primary?: boolean
+  secondary?: boolean
   dark?: boolean
   transparent?: boolean
   bordered?: boolean
@@ -55,6 +69,7 @@ export const Button = styled.button<ButtonStyleProps>`
   transition: background-color 0.3s, color 0.3s;
 
   ${({ primary }) => primary && PrimaryButton}
+  ${({ secondary }) => secondary && SecondaryButton}
   ${({ dark }) => dark && DarkButton}
   ${({ transparent }) => transparent && TransparentButton}
 `

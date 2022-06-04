@@ -1,12 +1,12 @@
 import React from 'react'
 import type { NextPage } from 'next'
 
-import { HomePage } from 'Components/Pages'
+import { RegisterPage } from 'Components/Pages'
 
 const RegisterNextPage: NextPage = () => {
   return (
     <>
-      <HomePage />
+      <RegisterPage />
     </>
   )
 }
