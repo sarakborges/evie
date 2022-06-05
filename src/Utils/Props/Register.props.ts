@@ -3,26 +3,15 @@ export interface RegisterProps {
   hasError: boolean
 
   form: {
-    register_name: {
-      value: string
-      error: string
-    }
-
-    register_email: {
-      value: string
-      error: string
-    }
-
-    register_password: {
-      value: string
-      error: string
-    }
-
-    register_confirm_password: {
-      value: string
-      error: string
-    }
-  }
+    id:
+      | 'register_name'
+      | 'register_email'
+      | 'register_password'
+      | 'register_confirm_password'
+      | 'register_gender'
+    value: string
+    error: string
+  }[]
 }
 
 export interface RegisterConstInterface {
@@ -45,9 +34,11 @@ export interface RegisterConstInterface {
           | 'register_email'
           | 'register_password'
           | 'register_confirm_password'
-        TYPE: string
+          | 'register_gender'
+        TYPE: 'text' | 'password' | 'select'
         LABEL: string
         PLACEHOLDER: string
+        OPTIONS?: string[]
       }[]
     }[]
   }

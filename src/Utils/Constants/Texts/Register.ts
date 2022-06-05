@@ -1,4 +1,4 @@
-import { SITE_NAME } from 'Utils/Constants'
+import { SITE_NAME, PRONOUNS } from 'Utils/Constants'
 import { RegisterConstInterface } from 'Utils/Props'
 
 export const REGISTER: RegisterConstInterface = {
@@ -10,7 +10,7 @@ export const REGISTER: RegisterConstInterface = {
   SUBMIT: `Create your account`,
 
   FORM: {
-    ERROR: `All fields need to be filled to advance.`,
+    ERROR: `All bits of info need to be filled before we can advance.`,
 
     STEPS: [
       {
@@ -23,11 +23,19 @@ export const REGISTER: RegisterConstInterface = {
             LABEL: `How should we call you?`,
             PLACEHOLDER: `Your prefered name!`,
           },
+
+          {
+            ID: `register_gender`,
+            TYPE: `select`,
+            LABEL: `Your pronouns <If you haven't identified yourself with any of those, please talk to us. We want to adapt and improve!>`,
+            PLACEHOLDER: `The way you identify yourself`,
+            OPTIONS: [...PRONOUNS],
+          },
         ],
       },
 
       {
-        TEXT: `Alright, [name]! Great to know you! Now, we will need you to input your login info.`,
+        TEXT: `Alright, [register_name]! Great to know you! Now, we will need you to input your login info.`,
 
         FIELDS: [
           {

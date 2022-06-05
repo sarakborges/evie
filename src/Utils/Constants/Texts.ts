@@ -13,3 +13,5 @@ export const MESSAGES = {
   TITLE: `Messages`,
   NONE: `No new messages.`,
 }
+
+export const PRONOUNS = ['He/him', 'She/her', 'They/them', 'Other']

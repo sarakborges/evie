@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const InputWrapper = styled.div`
+export const SelectWrapper = styled.div`
   display: flex;
   flex-flow: column-reverse;
   gap: 4px;
@@ -22,7 +22,7 @@ export const InputWrapper = styled.div`
     }
   }
 
-  > input {
+  > select {
     height: 32px;
 
     background-color: transparent;
@@ -44,6 +44,10 @@ export const InputWrapper = styled.div`
     &:-webkit-autofill,
     &:autofill {
       background: none;
+    }
+
+    > option {
+      color: var(--purple);
     }
   }
 

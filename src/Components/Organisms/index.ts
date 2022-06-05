@@ -8,6 +8,5 @@ export { HeaderUser } from './HeaderUser'
 
 export { ProfilesList } from './ProfilesList'
 
-export { RegisterStep0 } from './RegisterStep0'
-export { RegisterStep1 } from './RegisterStep1'
-export { RegisterStep2 } from './RegisterStep2'
+export { RegisterStep } from './RegisterStep'
+export { RegisterButtons } from './RegisterButtons'

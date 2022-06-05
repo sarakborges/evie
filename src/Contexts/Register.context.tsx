@@ -6,27 +6,7 @@ const INITIAL_STATE = {
   step: 0,
   hasError: false,
 
-  form: {
-    register_name: {
-      value: '',
-      error: '',
-    },
-
-    register_email: {
-      value: '',
-      error: '',
-    },
-
-    register_password: {
-      value: '',
-      error: '',
-    },
-
-    register_confirm_password: {
-      value: '',
-      error: '',
-    },
-  },
+  form: [],
 }
 
 export const RegisterContext = createContext<{
