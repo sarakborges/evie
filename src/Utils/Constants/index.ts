@@ -1,3 +1,4 @@
+export * from './Texts/SiteName.text'
 export * from './Texts'
 
 export { ROUTES } from './Routes'
