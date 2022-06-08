@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 
-import { CONNECTIONS, NOTIFICATIONS, ROUTES } from 'Utils/Constants'
+import { CONNECTIONS_TEXTS, NOTIFICATIONS_TEXTS, ROUTES } from 'Utils/Constants'
 import { getTimeString } from 'Utils/Functions'
 
 import { Button, Picture, Text } from 'Components/Atoms'
@@ -38,13 +38,13 @@ export const NotificationItemConnection: FC<
               </Link>
             </Styled.ProfileName>
 
-            <>{NOTIFICATIONS.NEW}</>
+            <>{NOTIFICATIONS_TEXTS.NEW}</>
           </Text>
         </div>
 
         <Styled.NotificationButtons>
-          <Button primary>{CONNECTIONS.BUTTONS.ACCEPT}</Button>
-          <Button primary>{CONNECTIONS.BUTTONS.REFUSE}</Button>
+          <Button primary>{CONNECTIONS_TEXTS.BUTTONS.ACCEPT}</Button>
+          <Button primary>{CONNECTIONS_TEXTS.BUTTONS.REFUSE}</Button>
         </Styled.NotificationButtons>
 
         <Text fs="12px" fc="grayMedium">

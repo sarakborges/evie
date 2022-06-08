@@ -2,7 +2,8 @@ import React, { FC, FormEvent } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import { LOGIN, ROUTES } from 'Utils/Constants'
+import { LOGIN_TEXTS, ROUTES } from 'Utils/Constants'
+import { LOGIN_FORM } from 'Utils/Forms'
 
 import { Button, Form, Text } from 'Components/Atoms'
 import { Input } from 'Components/Molecules'
@@ -20,18 +21,18 @@ export const LoginTemplate: FC = () => {
     <Styled.LoginTemplate>
       <Styled.LoginText>
         <Text fs="32px" fw={300}>
-          {LOGIN.WELCOME}
+          {LOGIN_TEXTS.WELCOME}
         </Text>
       </Styled.LoginText>
 
       <Styled.LoginFormWrapper>
         <Styled.LoginForm>
           <Text fs="24px" fw={300}>
-            {LOGIN.SIGNIN}
+            {LOGIN_TEXTS.SIGNIN}
           </Text>
 
           <Form onSubmit={doLogin}>
-            {LOGIN.FORM.map((loginFormItem) => {
+            {LOGIN_FORM.FIELDS.map((loginFormItem) => {
               return (
                 <Input
                   key={loginFormItem.ID}
@@ -44,13 +45,13 @@ export const LoginTemplate: FC = () => {
             })}
 
             <Button type="submit" primary>
-              {LOGIN.SUBMIT}
+              {LOGIN_TEXTS.SUBMIT}
             </Button>
           </Form>
 
           <Styled.NotRegistered>
             <Link href={ROUTES.REGISTER.PATH}>
-              <a>{LOGIN.NOT_REGISTERED}</a>
+              <a>{LOGIN_TEXTS.NOT_REGISTERED}</a>
             </Link>
           </Styled.NotRegistered>
         </Styled.LoginForm>

@@ -1,4 +1,4 @@
-export const SETTINGS = {
+export const SETTINGS_TEXTS = {
   TITLE: `Settings`,
 
   THEME: {

@@ -3,7 +3,7 @@ import { Bell } from '@styled-icons/entypo/Bell'
 
 import { NotificationsMock } from 'Assets/Mocks'
 
-import { NOTIFICATIONS } from 'Utils/Constants'
+import { NOTIFICATIONS_TEXTS } from 'Utils/Constants'
 import { NotificationProps } from 'Utils/Props'
 
 import { Button, CounterBubble, Text } from 'Components/Atoms'
@@ -31,7 +31,7 @@ export const HeaderNotifications: FC = () => {
         ref={dropdownRef}
         wrapperRef={dropdownWrapperRef}
         hasCloseButton
-        title={NOTIFICATIONS.TITLE}
+        title={NOTIFICATIONS_TEXTS.TITLE}
       >
         {notifications.length > 0 ? (
           <Styled.NotificationsList>
@@ -47,7 +47,7 @@ export const HeaderNotifications: FC = () => {
           </Styled.NotificationsList>
         ) : (
           <Styled.NoNotifications>
-            <Text lh={1.4}>{NOTIFICATIONS.NONE}</Text>
+            <Text lh={1.4}>{NOTIFICATIONS_TEXTS.NONE}</Text>
           </Styled.NoNotifications>
         )}
       </Dropdown>

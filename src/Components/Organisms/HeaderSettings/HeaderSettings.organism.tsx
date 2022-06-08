@@ -4,7 +4,7 @@ import { Sun } from '@styled-icons/boxicons-solid/Sun'
 import { MoonFill } from '@styled-icons/bootstrap/MoonFill'
 import { Checkmark } from '@styled-icons/icomoon/Checkmark'
 
-import { SETTINGS } from 'Utils/Constants'
+import { SETTINGS_TEXTS } from 'Utils/Constants'
 
 import { Button, Text } from 'Components/Atoms'
 import { Dropdown } from 'Components/Molecules'
@@ -21,30 +21,30 @@ export const HeaderSettings: FC = () => {
         ref={dropdownRef}
         wrapperRef={dropdownWrapperRef}
         hasCloseButton
-        title={SETTINGS.TITLE}
+        title={SETTINGS_TEXTS.TITLE}
       >
         <Styled.Settings>
           <div>
             <Styled.ThemeTitle>
-              <Text fs="12px">{SETTINGS.THEME.TITLE}</Text>
+              <Text fs="12px">{SETTINGS_TEXTS.THEME.TITLE}</Text>
             </Styled.ThemeTitle>
 
             <Styled.ThemeOptions>
               <Button dark>
                 <Sun />
-                <>{SETTINGS.THEME.OPTIONS.LIGHT}</>
+                <>{SETTINGS_TEXTS.THEME.OPTIONS.LIGHT}</>
               </Button>
 
               <Button dark bordered>
                 <MoonFill />
-                <>{SETTINGS.THEME.OPTIONS.DARK}</>
+                <>{SETTINGS_TEXTS.THEME.OPTIONS.DARK}</>
               </Button>
             </Styled.ThemeOptions>
           </div>
 
           <div>
             <Styled.ThemeTitle>
-              <Text fs="12px">{SETTINGS.COLOR}</Text>
+              <Text fs="12px">{SETTINGS_TEXTS.COLOR}</Text>
             </Styled.ThemeTitle>
 
             <Styled.ColorOptions>

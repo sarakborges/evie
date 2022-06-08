@@ -9,10 +9,10 @@ export const MESSAGES = {
 
 export const PRONOUNS = ['He/him', 'She/her', 'They/them', 'Other']
 
-export { CONNECTIONS } from './Connections.text'
-export { GROUPS } from './Groups.text'
-export { LOGIN } from './Login.text'
-export { NOTIFICATIONS } from './Notifications.text'
-export { REGISTER_TEXTS } from './Register.text'
-export { SETTINGS } from './Settings.text'
-export { SITE_NAME } from './SiteName.text'
+export * from './Connections.text'
+export * from './Groups.text'
+export * from './Login.text'
+export * from './Notifications.text'
+export * from './Register.text'
+export * from './Settings.text'
+export * from './SiteName.text'

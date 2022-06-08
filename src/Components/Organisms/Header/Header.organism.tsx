@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from 'react'
 import Link from 'next/link'
 
-import { HEADER_NAV_COMPONENTS, ROUTES, SITE_NAME } from 'Utils/Constants'
+import { HEADER_NAV_COMPONENTS, ROUTES, SITE_NAME_TEXTS } from 'Utils/Constants'
 
 import { HeaderNav } from 'Components/Molecules'
 
@@ -13,7 +13,7 @@ export const Header: FC = () => {
       <Styled.HeaderCorner>
         <Styled.Logo>
           <Link href={ROUTES.HOME.PATH}>
-            <a>{SITE_NAME.PLAIN}</a>
+            <a>{SITE_NAME_TEXTS.PLAIN}</a>
           </Link>
         </Styled.Logo>
 

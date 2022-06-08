@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { HomeSidebarListProps } from './HomeSidebarList.props'
 
-import { CONNECTIONS, GROUPS, ROUTES } from 'Utils/Constants'
+import { CONNECTIONS_TEXTS, GROUPS_TEXTS, ROUTES } from 'Utils/Constants'
 
 import { Text, Picture } from 'Components/Atoms'
 
@@ -15,7 +15,7 @@ export const HomeSidebarList: FC<HomeSidebarListProps> = ({ list, type }) => {
       <Styled.ListTitle>
         <div>
           <Text fw={700}>
-            {(type === 'connections' ? CONNECTIONS : GROUPS).TITLE}
+            {(type === 'connections' ? CONNECTIONS_TEXTS : GROUPS_TEXTS).TITLE}
           </Text>
 
           <Text fs="12px">({list?.length || 0})</Text>
@@ -27,7 +27,12 @@ export const HomeSidebarList: FC<HomeSidebarListProps> = ({ list, type }) => {
             : ROUTES.GROUPS
           ).PATH.replace('[url]', '')}
         >
-          <a>{(type === 'connections' ? CONNECTIONS : GROUPS).SEE_ALL}</a>
+          <a>
+            {
+              (type === 'connections' ? CONNECTIONS_TEXTS : GROUPS_TEXTS)
+                .SEE_ALL
+            }
+          </a>
         </Link>
       </Styled.ListTitle>
 
@@ -51,7 +56,7 @@ export const HomeSidebarList: FC<HomeSidebarListProps> = ({ list, type }) => {
         </Styled.List>
       ) : (
         <Text lh={1.4} fs="12px">
-          {(type === 'connections' ? CONNECTIONS : GROUPS).NONE}
+          {(type === 'connections' ? CONNECTIONS_TEXTS : GROUPS_TEXTS).NONE}
         </Text>
       )}
     </Styled.SidebarList>
