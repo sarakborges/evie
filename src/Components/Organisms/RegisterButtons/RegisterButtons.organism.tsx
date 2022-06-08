@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react'
 
-import { REGISTER } from 'Utils/Constants'
+import { REGISTER_TEXTS } from 'Utils/Constants'
+import { REGISTER_FORM } from 'Utils/Forms'
 
 import { RegisterContext } from 'Contexts'
 
@@ -15,7 +16,7 @@ export const RegisterButtons: FC = () => {
   const advanceStep = () => {
     if (
       step > 0 &&
-      REGISTER.FORM.STEPS[step - 1].FIELDS.some(
+      REGISTER_FORM.STEPS[step - 1].FIELDS.some(
         (fieldItem) =>
           !registerState.form
             .find((formItem) => formItem.id === fieldItem.ID)
@@ -37,18 +38,18 @@ export const RegisterButtons: FC = () => {
     <Styled.StepsButtons>
       {step > 0 && (
         <Button secondary onClick={returnStep}>
-          {REGISTER.BACK}
+          {REGISTER_TEXTS.BACK}
         </Button>
       )}
 
-      {step < REGISTER.FORM.STEPS.length && (
+      {step < REGISTER_FORM.STEPS.length && (
         <Button secondary onClick={advanceStep}>
-          {REGISTER.ADVANCE}
+          {REGISTER_TEXTS.ADVANCE}
         </Button>
       )}
 
-      {step === REGISTER.FORM.STEPS.length && (
-        <Button secondary>{REGISTER.SUBMIT}</Button>
+      {step === REGISTER_FORM.STEPS.length && (
+        <Button secondary>{REGISTER_TEXTS.SUBMIT}</Button>
       )}
     </Styled.StepsButtons>
   )

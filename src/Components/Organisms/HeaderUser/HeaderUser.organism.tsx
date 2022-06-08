@@ -1,7 +1,7 @@
 import React, { ElementRef, FC, Fragment, useContext, useRef } from 'react'
 import { CaretDown } from '@styled-icons/ionicons-sharp/CaretDown'
 
-import { HEADER_USER_BUTTONS, PROFILE } from 'Utils/Constants'
+import { HEADER_PROFILE, HEADER_USER_BUTTONS } from 'Utils/Constants'
 
 import { UserContext } from 'Contexts'
 
@@ -24,7 +24,7 @@ export const HeaderUser: FC = () => {
       <Dropdown
         ref={dropdownRef}
         wrapperRef={dropdownWrapperRef}
-        title={PROFILE.TITLE.replace('[name]', name)}
+        title={HEADER_PROFILE.TITLE.replace('[name]', name)}
         hasCloseButton
       >
         <ProfileListItem profile={currentProfile} buttons={['edit']} />

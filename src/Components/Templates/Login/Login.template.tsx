@@ -13,8 +13,6 @@ export const LoginTemplate: FC = () => {
   const router = useRouter()
 
   const doLogin = (e: FormEvent<HTMLFormElement>) => {
-    console.log(e.target)
-
     router.push(ROUTES.HOME.PATH)
   }
 

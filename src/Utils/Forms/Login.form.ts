@@ -1,14 +1,10 @@
-import { SITE_NAME } from 'Utils/Constants'
+import { LoginFormProps } from 'Utils/Props'
 
-export const LOGIN = {
-  WELCOME: `Welcome to ${SITE_NAME.PLAIN}!`,
-  SIGNIN: `Log in`,
-  SUBMIT: `Advance`,
-  NOT_REGISTERED: `I don't have a account`,
-
-  FORM: [
+export const LOGIN_FORM: LoginFormProps = {
+  FIELDS: [
     {
       ID: `login_email`,
+      TYPE: `text`,
       LABEL: `Your email`,
       PLACEHOLDER: `user@example.com`,
     },

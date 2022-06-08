@@ -27,7 +27,7 @@ export const ProfilesMock: ProfileProps[] = [
         _id: '3',
         name: `nine.`,
         url: `rrevenanti`,
-        picture: `https://pbs.twimg.com/profile_images/1530052537365176320/z5RnK9sN_400x400.jpg`,
+        picture: `https://pbs.twimg.com/profile_images/1532143759231795200/p4u0w_Q3_400x400.jpg`,
       },
 
       {

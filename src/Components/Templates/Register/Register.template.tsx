@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react'
 import Link from 'next/link'
 
-import { REGISTER, ROUTES } from 'Utils/Constants'
+import { REGISTER_FORM, REGISTER_TEXTS, ROUTES } from 'Utils/Constants'
 
 import { RegisterContext } from 'Contexts'
 
@@ -22,23 +22,23 @@ export const RegisterTemplate: FC = () => {
         ) : (
           <>
             <Text fs="32px" fw={300} lh={1.4}>
-              {REGISTER.WELCOME}
+              {REGISTER_TEXTS.WELCOME}
             </Text>
 
             <Text fs="24px" fw={300} lh={1.4}>
-              {REGISTER.PROCEED}
+              {REGISTER_TEXTS.PROCEED}
             </Text>
           </>
         )}
 
-        {hasError && <Text fc="redLight">{REGISTER.FORM.ERROR}</Text>}
+        {hasError && <Text fc="redLight">{REGISTER_FORM.ERROR}</Text>}
 
         <RegisterButtons />
 
         {step === 0 && (
           <Styled.AlreadyRegistered>
             <Link href={ROUTES.LOGIN.PATH}>
-              <a>{REGISTER.ALREADY_REGISTERED}</a>
+              <a>{REGISTER_TEXTS.ALREADY_REGISTERED}</a>
             </Link>
           </Styled.AlreadyRegistered>
         )}

@@ -1,3 +1,5 @@
+import { FormProps } from './Form.props'
+
 export interface RegisterProps {
   step: number
   hasError: boolean
@@ -9,37 +11,18 @@ export interface RegisterProps {
       | 'register_password'
       | 'register_confirm_password'
       | 'register_gender'
+      | 'register_profile_name'
     value: string
     error: string
   }[]
 }
 
-export interface RegisterConstInterface {
-  WELCOME: string
-  PROCEED: string
-  ALREADY_REGISTERED: string
-  ADVANCE: string
-  BACK: string
-  SUBMIT: string
+export interface RegisterFormInterface {
+  ERROR: string
 
-  FORM: {
-    ERROR: string
+  STEPS: {
+    TEXT: string
 
-    STEPS: {
-      TEXT: string
-
-      FIELDS: {
-        ID:
-          | 'register_name'
-          | 'register_email'
-          | 'register_password'
-          | 'register_confirm_password'
-          | 'register_gender'
-        TYPE: 'text' | 'password' | 'select'
-        LABEL: string
-        PLACEHOLDER: string
-        OPTIONS?: string[]
-      }[]
-    }[]
-  }
+    FIELDS: FormProps[]
+  }[]
 }

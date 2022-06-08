@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC, Fragment, useContext } from 'react'
 
-import { REGISTER } from 'Utils/Constants'
+import { REGISTER_FORM } from 'Utils/Forms'
 
 import { RegisterContext } from 'Contexts'
 
@@ -49,13 +49,13 @@ export const RegisterStep: FC = () => {
   return (
     <>
       <Text fs="32px" fw={300} lh={1.4}>
-        {REGISTER.FORM.STEPS[step - 1].TEXT.replace(
+        {REGISTER_FORM.STEPS[step - 1].TEXT.replace(
           '[register_name]',
           getName()
         )}
       </Text>
 
-      {REGISTER.FORM.STEPS[step - 1].FIELDS.map((registerFormItem) => {
+      {REGISTER_FORM.STEPS[step - 1].FIELDS.map((registerFormItem) => {
         return (
           <Fragment key={registerFormItem.ID}>
             {registerFormItem.TYPE === 'select' && (
