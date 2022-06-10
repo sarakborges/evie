@@ -1,5 +1,4 @@
-export { Input } from './Input'
-export { Select } from './Select'
+export { Field } from './Field'
 
 export { Dropdown } from './Dropdown'
 

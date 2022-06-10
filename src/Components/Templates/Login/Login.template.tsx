@@ -6,7 +6,7 @@ import { LOGIN_TEXTS, ROUTES } from 'Utils/Constants'
 import { LOGIN_FORM } from 'Utils/Forms'
 
 import { Button, Form, Text } from 'Components/Atoms'
-import { Input } from 'Components/Molecules'
+import { Field } from 'Components/Molecules'
 
 import * as Styled from './Login.style'
 
@@ -34,7 +34,7 @@ export const LoginTemplate: FC = () => {
           <Form onSubmit={doLogin}>
             {LOGIN_FORM.FIELDS.map((loginFormItem) => {
               return (
-                <Input
+                <Field
                   key={loginFormItem.ID}
                   id={loginFormItem.ID}
                   type={loginFormItem.TYPE}

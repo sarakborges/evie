@@ -1,4 +1,4 @@
-import { PRONOUNS } from 'Utils/Constants'
+import { PRONOUNS, SITE_NAME_TEXTS } from 'Utils/Constants'
 import { RegisterFormInterface } from 'Utils/Props'
 
 export const REGISTER_FORM: RegisterFormInterface = {
@@ -6,7 +6,7 @@ export const REGISTER_FORM: RegisterFormInterface = {
 
   STEPS: [
     {
-      TEXT: `First off. The most important stuff. This is only used by us to communicate with you. Other users can't see this.`,
+      TEXT: `First off. The most important stuff. This is only used by us to communicate with you. Other users can't see any of this.`,
 
       FIELDS: [
         {
@@ -21,11 +21,12 @@ export const REGISTER_FORM: RegisterFormInterface = {
         {
           ID: `register_gender`,
           TYPE: `select`,
-          LABEL: `Your pronouns <If you haven't identified yourself with any of those, please talk to us. We want to adapt and improve!>`,
+          LABEL: `Your pronouns`,
           PLACEHOLDER: `The way you identify yourself`,
           OPTIONS: [...PRONOUNS],
           REQUIRED: true,
           REQUIRED_ERROR: `You need to fill this before we can advance.`,
+          HELP_TEXT: `If you haven't identified yourself with any of those, please talk to us. We want to adapt and improve!`,
         },
       ],
     },
@@ -41,6 +42,7 @@ export const REGISTER_FORM: RegisterFormInterface = {
           PLACEHOLDER: `user@email.com`,
           REQUIRED: true,
           REQUIRED_ERROR: `You need to fill this before we can advance.`,
+          HELP_TEXT: `This is used to log into ${SITE_NAME_TEXTS.PLAIN}, redefine password, and other communications by our team.`,
         },
 
         {
@@ -70,10 +72,18 @@ export const REGISTER_FORM: RegisterFormInterface = {
         {
           ID: `register_profile_name`,
           TYPE: `text`,
-          LABEL: `Profile name`,
-          PLACEHOLDER: `Name displayed on your profile`,
+          LABEL: `Name displayed on your profile`,
+          PLACEHOLDER: `The way you want people to know you`,
           REQUIRED: true,
           REQUIRED_ERROR: `You need to fill this before we can advance.`,
+        },
+
+        {
+          ID: `register_profile_url`,
+          TYPE: `text`,
+          LABEL: `Profile tag <Use only letters and numbers>`,
+          PLACEHOLDER: `mytag`,
+          HELP_TEXT: `Your @, and custom URL. If you leave this empty, it will be based on your profile name.`,
         },
       ],
     },

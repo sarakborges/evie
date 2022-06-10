@@ -7,6 +7,7 @@ export type FormIdsType =
   | 'login_email'
   | 'login_password'
   | 'register_profile_name'
+  | 'register_profile_url'
 
 export interface FormProps {
   ID: FormIdsType
@@ -16,6 +17,7 @@ export interface FormProps {
   OPTIONS?: string[]
   REQUIRED?: boolean
   REQUIRED_ERROR?: string
+  HELP_TEXT?: string
 }
 
 export interface FormItemProps {

@@ -1,22 +1,16 @@
-import React, { ChangeEvent, FC, Fragment, useContext } from 'react'
+import React, { ChangeEvent, FC, useContext } from 'react'
 
 import { REGISTER_FORM } from 'Utils/Forms'
+import { slugify } from 'Utils/Functions'
 
 import { RegisterContext } from 'Contexts'
 
 import { Text } from 'Components/Atoms'
-import { Input, Select } from 'Components/Molecules'
+import { Field } from 'Components/Molecules'
 
 export const RegisterStep: FC = () => {
   const { registerState, setRegisterState } = useContext(RegisterContext)
   const { step } = registerState
-
-  const getName = () => {
-    return (
-      registerState.form.find((formItem) => formItem.id === 'register_name')
-        ?.value || ''
-    )
-  }
 
   const getValue = (id: string) => {
     return (
@@ -45,7 +39,10 @@ export const RegisterStep: FC = () => {
 
         {
           id: e.currentTarget.id,
-          value: e.currentTarget.value,
+          value:
+            e.currentTarget.id === 'register_profile_url'
+              ? slugify(e.currentTarget.value)
+              : e.currentTarget.value,
           warning: '',
         },
       ],
@@ -57,39 +54,24 @@ export const RegisterStep: FC = () => {
       <Text fs="32px" fw={300} lh={1.4}>
         {REGISTER_FORM.STEPS[step - 1].TEXT.replace(
           '[register_name]',
-          getName()
+          getValue('register_name')
         )}
       </Text>
 
       {REGISTER_FORM.STEPS[step - 1].FIELDS.map((registerFormItem) => {
         return (
-          <Fragment key={registerFormItem.ID}>
-            {registerFormItem.TYPE === 'select' && (
-              <Select
-                key={registerFormItem.ID}
-                id={registerFormItem.ID}
-                label={registerFormItem.LABEL}
-                placeholder={registerFormItem.PLACEHOLDER}
-                warning={getWarning(registerFormItem.ID)}
-                value={getValue(registerFormItem.ID)}
-                options={registerFormItem?.OPTIONS || []}
-                onChange={handleChange}
-              />
-            )}
-
-            {['text', 'password'].includes(registerFormItem.TYPE) && (
-              <Input
-                key={registerFormItem.ID}
-                id={registerFormItem.ID}
-                type={registerFormItem.TYPE}
-                label={registerFormItem.LABEL}
-                placeholder={registerFormItem.PLACEHOLDER}
-                warning={getWarning(registerFormItem.ID)}
-                value={getValue(registerFormItem.ID)}
-                onChange={handleChange}
-              />
-            )}
-          </Fragment>
+          <Field
+            key={registerFormItem.ID}
+            id={registerFormItem.ID}
+            type={registerFormItem.TYPE}
+            label={registerFormItem.LABEL}
+            placeholder={registerFormItem.PLACEHOLDER}
+            helpText={registerFormItem.HELP_TEXT}
+            warning={getWarning(registerFormItem.ID)}
+            value={getValue(registerFormItem.ID)}
+            options={registerFormItem?.OPTIONS || []}
+            onChange={handleChange}
+          />
         )
       })}
     </>

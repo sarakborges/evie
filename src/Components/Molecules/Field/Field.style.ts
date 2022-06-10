@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const SelectWrapper = styled.div`
+export const FieldWrapper = styled.div`
   display: flex;
   flex-flow: column-reverse;
   gap: 4px;
@@ -17,12 +17,12 @@ export const SelectWrapper = styled.div`
     height: 31px;
     aspect-ratio: 1;
 
-    & + input {
+    & + :is(input, select) {
       padding-right: 31px;
     }
   }
 
-  > select {
+  > :is(input, select) {
     height: 32px;
 
     background-color: transparent;
@@ -52,6 +52,10 @@ export const SelectWrapper = styled.div`
   }
 
   > label {
+    display: flex;
+    place-items: center;
+    gap: 4px;
+
     font-size: 12px;
     line-height: 1.4;
 
@@ -62,12 +66,57 @@ export const SelectWrapper = styled.div`
 export const Warning = styled.label`
   color: var(--yellowLight);
 
-  & + select + label,
-  & + button + select + label {
+  & + :is(input, select) + label,
+  & + button + :is(input, select) + label {
     color: var(--yellowLight);
   }
 
-  & + button + select {
+  & + button {
+    bottom: 22px;
+  }
+
+  & + button + :is(input, select) {
     border-color: var(--yellowLight);
+  }
+`
+
+export const Help = styled.div`
+  position: relative;
+`
+
+export const HelpIcon = styled.div`
+  display: flex;
+  place-items: center;
+  place-content: center;
+
+  width: 20px;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+  background-color: var(--purpleMedium);
+`
+
+export const HelpText = styled.div`
+  display: flex;
+
+  position: absolute;
+  left: calc(100% + 4px);
+  top: -8px;
+  z-index: 1;
+
+  width: 280px;
+  padding: 8px;
+
+  border-radius: 4px;
+  background-color: var(--purpleMedium);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s, visibility 0.3s;
+
+  ${Help}:hover > & {
+    opacity: 1;
+    visibility: visible;
   }
 `

@@ -13,7 +13,7 @@ export const RegisterButtons: FC = () => {
   const { registerState, setRegisterState } = useContext(RegisterContext)
   const { step } = registerState
 
-  const advanceStep = () => {
+  const validateForm = () => {
     if (
       step > 0 &&
       REGISTER_FORM.STEPS[step - 1].FIELDS.some(
@@ -42,10 +42,16 @@ export const RegisterButtons: FC = () => {
         form: [...newRegisterForm],
       })
 
-      return
+      return false
     }
 
-    setRegisterState?.({ ...registerState, step: step + 1 })
+    return true
+  }
+
+  const advanceStep = () => {
+    if (validateForm()) {
+      setRegisterState?.({ ...registerState, step: step + 1 })
+    }
   }
 
   const returnStep = () => {
@@ -57,6 +63,10 @@ export const RegisterButtons: FC = () => {
         ...registerState.form.map((formItem) => ({ ...formItem, warning: '' })),
       ],
     })
+  }
+
+  const submitRegister = () => {
+    validateForm()
   }
 
   return (
@@ -74,7 +84,9 @@ export const RegisterButtons: FC = () => {
       )}
 
       {step === REGISTER_FORM.STEPS.length && (
-        <Button secondary>{REGISTER_TEXTS.SUBMIT}</Button>
+        <Button secondary onClick={submitRegister}>
+          {REGISTER_TEXTS.SUBMIT}
+        </Button>
       )}
     </Styled.StepsButtons>
   )
