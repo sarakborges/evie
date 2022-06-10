@@ -5,10 +5,12 @@ import { SelectProps } from './Select.props'
 import * as Styled from './Select.style'
 
 export const Select: FC<SelectProps> = ({ ...props }) => {
-  const { id, label, options, placeholder } = props
+  const { id, label, options, placeholder, warning } = props
 
   return (
     <Styled.SelectWrapper>
+      {warning && <Styled.Warning htmlFor={id}>{warning}</Styled.Warning>}
+
       <select {...props}>
         <option value="" disabled>
           {placeholder}
@@ -23,7 +25,7 @@ export const Select: FC<SelectProps> = ({ ...props }) => {
         })}
       </select>
 
-      {id && <label htmlFor={id}>{label}</label>}
+      {label && <label htmlFor={id}>{label}</label>}
     </Styled.SelectWrapper>
   )
 }

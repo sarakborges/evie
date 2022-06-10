@@ -18,20 +18,45 @@ export const RegisterButtons: FC = () => {
       step > 0 &&
       REGISTER_FORM.STEPS[step - 1].FIELDS.some(
         (fieldItem) =>
+          fieldItem.REQUIRED &&
           !registerState.form
             .find((formItem) => formItem.id === fieldItem.ID)
             ?.value.trim()
       )
     ) {
-      setRegisterState?.({ ...registerState, hasError: true })
+      const newRegisterForm = registerState.form.map((formItem) => {
+        const field = REGISTER_FORM.STEPS[step - 1].FIELDS.find(
+          (fieldItem) => fieldItem.ID === formItem.id
+        )
+
+        return {
+          ...formItem,
+
+          warning:
+            field?.REQUIRED && !formItem.value ? field?.REQUIRED_ERROR : '',
+        }
+      })
+
+      setRegisterState?.({
+        ...registerState,
+        form: [...newRegisterForm],
+      })
+
       return
     }
 
-    setRegisterState?.({ ...registerState, step: step + 1, hasError: false })
+    setRegisterState?.({ ...registerState, step: step + 1 })
   }
 
   const returnStep = () => {
-    setRegisterState?.({ ...registerState, step: step - 1, hasError: false })
+    setRegisterState?.({
+      ...registerState,
+      step: step - 1,
+
+      form: [
+        ...registerState.form.map((formItem) => ({ ...formItem, warning: '' })),
+      ],
+    })
   }
 
   return (

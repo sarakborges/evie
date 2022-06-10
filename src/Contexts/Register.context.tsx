@@ -4,8 +4,6 @@ import { RegisterProps } from 'Utils/Props'
 
 const INITIAL_STATE = {
   step: 0,
-  hasError: false,
-
   form: [],
 }
 

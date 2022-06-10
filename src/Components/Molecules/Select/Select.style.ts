@@ -58,3 +58,16 @@ export const SelectWrapper = styled.div`
     transition: color 0.3s;
   }
 `
+
+export const Warning = styled.label`
+  color: var(--yellowLight);
+
+  & + select + label,
+  & + button + select + label {
+    color: var(--yellowLight);
+  }
+
+  & + button + select {
+    border-color: var(--yellowLight);
+  }
+`

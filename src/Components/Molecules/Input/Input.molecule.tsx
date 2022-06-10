@@ -8,7 +8,7 @@ import { Button } from 'Components/Atoms/Button'
 import * as Styled from './Input.style'
 
 export const Input: FC<InputProps> = ({ ...props }) => {
-  const { id, label, type } = props
+  const { id, label, type, warning } = props
 
   const [displayPassword, setDisplayPassword] = useState(false)
 
@@ -18,6 +18,8 @@ export const Input: FC<InputProps> = ({ ...props }) => {
 
   return (
     <Styled.InputWrapper>
+      {warning && <Styled.Warning htmlFor={id}>{warning}</Styled.Warning>}
+
       {type === 'password' ? (
         <>
           <Button transparent onClick={toggleDisplayPassword}>

@@ -2,7 +2,7 @@ import { PRONOUNS } from 'Utils/Constants'
 import { RegisterFormInterface } from 'Utils/Props'
 
 export const REGISTER_FORM: RegisterFormInterface = {
-  ERROR: `All bits of info need to be filled before we can advance.`,
+  ERROR: `All required fields need to be filled before we can advance.`,
 
   STEPS: [
     {
@@ -13,7 +13,9 @@ export const REGISTER_FORM: RegisterFormInterface = {
           ID: `register_name`,
           TYPE: `text`,
           LABEL: `How should we call you?`,
-          PLACEHOLDER: `Your prefered name!`,
+          PLACEHOLDER: `The name you identify yourself`,
+          REQUIRED: true,
+          REQUIRED_ERROR: `You need to fill this before we can advance.`,
         },
 
         {
@@ -22,6 +24,8 @@ export const REGISTER_FORM: RegisterFormInterface = {
           LABEL: `Your pronouns <If you haven't identified yourself with any of those, please talk to us. We want to adapt and improve!>`,
           PLACEHOLDER: `The way you identify yourself`,
           OPTIONS: [...PRONOUNS],
+          REQUIRED: true,
+          REQUIRED_ERROR: `You need to fill this before we can advance.`,
         },
       ],
     },
@@ -35,6 +39,8 @@ export const REGISTER_FORM: RegisterFormInterface = {
           TYPE: `text`,
           LABEL: `Your email`,
           PLACEHOLDER: `user@email.com`,
+          REQUIRED: true,
+          REQUIRED_ERROR: `You need to fill this before we can advance.`,
         },
 
         {
@@ -42,6 +48,8 @@ export const REGISTER_FORM: RegisterFormInterface = {
           TYPE: `password`,
           LABEL: `Your password`,
           PLACEHOLDER: `Very secure password`,
+          REQUIRED: true,
+          REQUIRED_ERROR: `You need to fill this before we can advance.`,
         },
 
         {
@@ -49,6 +57,8 @@ export const REGISTER_FORM: RegisterFormInterface = {
           TYPE: `password`,
           LABEL: `Confirm your password`,
           PLACEHOLDER: `Repeat that same very secure password`,
+          REQUIRED: true,
+          REQUIRED_ERROR: `You need to fill this before we can advance.`,
         },
       ],
     },
@@ -62,6 +72,8 @@ export const REGISTER_FORM: RegisterFormInterface = {
           TYPE: `text`,
           LABEL: `Profile name`,
           PLACEHOLDER: `Name displayed on your profile`,
+          REQUIRED: true,
+          REQUIRED_ERROR: `You need to fill this before we can advance.`,
         },
       ],
     },

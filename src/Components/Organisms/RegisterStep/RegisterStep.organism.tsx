@@ -26,6 +26,12 @@ export const RegisterStep: FC = () => {
     )
   }
 
+  const getWarning = (id: string) => {
+    return (
+      registerState?.form?.find((formItem) => formItem.id === id)?.warning || ''
+    )
+  }
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -40,7 +46,7 @@ export const RegisterStep: FC = () => {
         {
           id: e.currentTarget.id,
           value: e.currentTarget.value,
-          error: '',
+          warning: '',
         },
       ],
     })
@@ -64,6 +70,7 @@ export const RegisterStep: FC = () => {
                 id={registerFormItem.ID}
                 label={registerFormItem.LABEL}
                 placeholder={registerFormItem.PLACEHOLDER}
+                warning={getWarning(registerFormItem.ID)}
                 value={getValue(registerFormItem.ID)}
                 options={registerFormItem?.OPTIONS || []}
                 onChange={handleChange}
@@ -77,6 +84,7 @@ export const RegisterStep: FC = () => {
                 type={registerFormItem.TYPE}
                 label={registerFormItem.LABEL}
                 placeholder={registerFormItem.PLACEHOLDER}
+                warning={getWarning(registerFormItem.ID)}
                 value={getValue(registerFormItem.ID)}
                 onChange={handleChange}
               />

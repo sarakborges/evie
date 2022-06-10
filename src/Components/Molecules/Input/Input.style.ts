@@ -54,3 +54,20 @@ export const InputWrapper = styled.div`
     transition: color 0.3s;
   }
 `
+
+export const Warning = styled.label`
+  color: var(--yellowLight);
+
+  & + input + label,
+  & + button + input + label {
+    color: var(--yellowLight);
+  }
+
+  & + button {
+    bottom: 22px;
+  }
+
+  & + button + input {
+    border-color: var(--yellowLight);
+  }
+`
