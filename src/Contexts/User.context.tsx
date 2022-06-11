@@ -4,6 +4,7 @@ import { UserProps } from 'Utils/Props'
 
 const INITIAL_STATE = {
   _id: '',
+  name: '',
 
   profiles: [
     {
