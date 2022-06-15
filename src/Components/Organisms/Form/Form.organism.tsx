@@ -31,8 +31,9 @@ export const Form: FC<FormProps> = ({
   }
 
   const validateForm = () => {
+    console.log(form.STEPS[step])
+
     if (
-      step > 0 &&
       form.STEPS[step].FIELDS?.some(
         (fieldItem) =>
           fieldItem.REQUIRED &&
@@ -89,7 +90,7 @@ export const Form: FC<FormProps> = ({
   }
 
   const advanceStep = () => {
-    if (validateForm()) {
+    if (step < form?.STEPS.length - 1 && validateForm()) {
       setFormState?.({
         ...formState,
         step: step + 1,
@@ -160,7 +161,6 @@ export const Form: FC<FormProps> = ({
             type="submit"
             primary={buttonStyles === 'primary'}
             secondary={buttonStyles === 'secondary'}
-            onClick={advanceStep}
           >
             {form.STEPS[step].ADVANCE_TEXT}
           </Button>

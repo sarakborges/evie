@@ -82,6 +82,8 @@ export const Warning = styled.label`
 
 export const Help = styled.div`
   position: relative;
+
+  color: var(--grayLight);
 `
 
 export const HelpIcon = styled.div`
