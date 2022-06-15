@@ -15,22 +15,6 @@ export const RegisterTemplate: FC = () => {
   const { registerState, setRegisterState } = useContext(RegisterContext)
   const { step } = registerState
 
-  useEffect(() => {
-    const form: FormItemProps[] = []
-
-    REGISTER_FORM.STEPS.forEach((stepItem) => {
-      stepItem.FIELDS?.forEach((fieldItem) => {
-        form.push({
-          id: fieldItem.ID,
-          value: '',
-          warning: '',
-        })
-      })
-    })
-
-    setRegisterState?.({ ...registerState, form: [...form] })
-  }, [])
-
   const doRegister = () => {}
 
   return (

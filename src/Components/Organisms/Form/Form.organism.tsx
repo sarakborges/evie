@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, FormEvent } from 'react'
+import React, { ChangeEvent, FC, FormEvent, useEffect } from 'react'
 
 import { slugify } from 'Utils/Functions'
 
@@ -7,6 +7,7 @@ import { Field } from 'Components/Molecules'
 
 import { FormProps } from './Form.props'
 import * as Styled from './Form.style'
+import { FormItemProps } from 'Utils/Props'
 
 export const Form: FC<FormProps> = ({
   form,
@@ -109,12 +110,32 @@ export const Form: FC<FormProps> = ({
     e.preventDefault()
 
     if (step === form?.STEPS.length - 1) {
+      if (!validateForm()) {
+        return
+      }
+
       onSubmit?.(e)
       return
     }
 
     advanceStep()
   }
+
+  useEffect(() => {
+    const newForm: FormItemProps[] = []
+
+    form.STEPS.forEach((stepItem) => {
+      stepItem.FIELDS?.forEach((fieldItem) => {
+        newForm.push({
+          id: fieldItem.ID,
+          value: '',
+          warning: '',
+        })
+      })
+    })
+
+    setFormState?.({ ...formState, form: [...newForm] })
+  }, [])
 
   return (
     <form {...props} onSubmit={handleSubmit}>
