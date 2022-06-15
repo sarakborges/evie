@@ -1,6 +1,5 @@
 export * from './Form.props'
 export * from './Login.props'
 export * from './Notification.props'
-export * from './Register.props'
 export * from './Profile.props'
 export * from './User.props'

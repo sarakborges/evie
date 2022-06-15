@@ -7,4 +7,6 @@ export const Text = styled.p<TextProps>`
   font-weight: ${({ fw }) => fw || 400};
   line-height: ${({ lh }) => lh || 1};
   color: ${({ fc }) => `var(--${fc || 'grayLight'})`};
+
+  white-space: pre-line;
 `

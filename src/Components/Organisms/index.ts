@@ -1,3 +1,5 @@
+export { Form } from './Form'
+
 export { HomeSidebar } from './HomeSidebar'
 
 export { Header } from './Header'
@@ -7,6 +9,3 @@ export { HeaderMessages } from './HeaderMessages'
 export { HeaderUser } from './HeaderUser'
 
 export { ProfilesList } from './ProfilesList'
-
-export { RegisterStep } from './RegisterStep'
-export { RegisterButtons } from './RegisterButtons'

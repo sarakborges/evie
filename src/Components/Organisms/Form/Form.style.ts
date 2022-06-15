@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StepsButtons = styled.div`
+export const Buttons = styled.section`
   display: flex;
   place-items: center;
   place-content: center;

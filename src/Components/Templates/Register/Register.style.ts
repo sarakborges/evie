@@ -11,14 +11,16 @@ export const RegisterTemplate = styled.div`
 `
 
 export const RegisterContent = styled.div`
-  display: flex;
-  place-items: center;
-  place-content: center;
-  flex-flow: column;
-  gap: 48px;
+  > :is(form, div) {
+    display: flex;
+    place-items: center;
+    place-content: center;
+    flex-flow: column;
+    gap: 48px;
 
-  width: 632px;
-  padding: 32px;
+    width: 632px;
+    padding: 32px;
+  }
 `
 
 export const StepsButtons = styled.div`

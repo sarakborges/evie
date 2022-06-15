@@ -7,8 +7,7 @@ import { FormItemProps } from 'Utils/Props'
 
 import { RegisterContext } from 'Contexts'
 
-import { Text } from 'Components/Atoms'
-import { RegisterButtons, RegisterStep } from 'Components/Organisms'
+import { Form } from 'Components/Organisms'
 
 import * as Styled from './Register.style'
 
@@ -20,7 +19,7 @@ export const RegisterTemplate: FC = () => {
     const form: FormItemProps[] = []
 
     REGISTER_FORM.STEPS.forEach((stepItem) => {
-      stepItem.FIELDS.forEach((fieldItem) => {
+      stepItem.FIELDS?.forEach((fieldItem) => {
         form.push({
           id: fieldItem.ID,
           value: '',
@@ -32,24 +31,19 @@ export const RegisterTemplate: FC = () => {
     setRegisterState?.({ ...registerState, form: [...form] })
   }, [])
 
+  const doRegister = () => {}
+
   return (
     <Styled.RegisterTemplate>
       <Styled.RegisterContent>
-        {step > 0 ? (
-          <RegisterStep />
-        ) : (
-          <>
-            <Text fs="32px" fw={300} lh={1.4}>
-              {REGISTER_TEXTS.WELCOME}
-            </Text>
-
-            <Text fs="24px" fw={300} lh={1.4}>
-              {REGISTER_TEXTS.PROCEED}
-            </Text>
-          </>
-        )}
-
-        <RegisterButtons />
+        <Form
+          form={REGISTER_FORM}
+          formState={registerState}
+          step={step}
+          setFormState={setRegisterState}
+          buttonStyles="secondary"
+          onSubmit={doRegister}
+        />
 
         {step === 0 && (
           <Styled.AlreadyRegistered>

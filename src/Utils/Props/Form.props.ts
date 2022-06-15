@@ -9,7 +9,7 @@ export type FormIdsType =
   | 'register_profile_name'
   | 'register_profile_url'
 
-export interface FormProps {
+export interface FieldsProps {
   ID: FormIdsType
   TYPE: 'text' | 'password' | 'select'
   LABEL: string
@@ -24,4 +24,22 @@ export interface FormItemProps {
   id: FormIdsType
   value: string
   warning: string
+}
+
+export interface GenericFormProps {
+  step: number
+  form: FormItemProps[]
+}
+
+export interface GenericFormStepsProps {
+  ERROR?: string
+
+  STEPS: {
+    TEXT?: string
+    ADVANCE_TEXT?: string
+    RETURN_TEXT?: string
+    SUBMIT_TEXT?: string
+
+    FIELDS?: FieldsProps[]
+  }[]
 }

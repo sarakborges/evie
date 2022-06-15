@@ -1,12 +1,22 @@
 import { PRONOUNS, SITE_NAME_TEXTS } from 'Utils/Constants'
-import { RegisterFormInterface } from 'Utils/Props'
+import { GenericFormStepsProps } from 'Utils/Props'
 
-export const REGISTER_FORM: RegisterFormInterface = {
+export const REGISTER_FORM: GenericFormStepsProps = {
   ERROR: `All required fields need to be filled before we can advance.`,
 
   STEPS: [
     {
+      TEXT: `Welcome to ${SITE_NAME_TEXTS.PLAIN}!
+      
+      To create your account, we need you to tell us a bit about yourself. Don't worry, it won't take long.`,
+
+      ADVANCE_TEXT: `Advance`,
+    },
+
+    {
       TEXT: `First off. The most important stuff. This is only used by us to communicate with you. Other users can't see any of this.`,
+      RETURN_TEXT: `Previous step`,
+      ADVANCE_TEXT: `Next step`,
 
       FIELDS: [
         {
@@ -33,6 +43,8 @@ export const REGISTER_FORM: RegisterFormInterface = {
 
     {
       TEXT: `Alright, [register_name]! Great to know you! Now, we will need you to input your login info.`,
+      RETURN_TEXT: `Previous step`,
+      ADVANCE_TEXT: `Next step`,
 
       FIELDS: [
         {
@@ -67,6 +79,8 @@ export const REGISTER_FORM: RegisterFormInterface = {
 
     {
       TEXT: `Now, we need to create your profile.`,
+      RETURN_TEXT: `Previous step`,
+      SUBMIT_TEXT: `Create your account`,
 
       FIELDS: [
         {

@@ -1,6 +1,6 @@
 import React, { Dispatch, createContext, useState, FC, ReactNode } from 'react'
 
-import { RegisterProps } from 'Utils/Props'
+import { GenericFormProps } from 'Utils/Props'
 
 const INITIAL_STATE = {
   step: 0,
@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 }
 
 export const RegisterContext = createContext<{
-  registerState: RegisterProps
+  registerState: GenericFormProps
   setRegisterState: Dispatch<any> | null
 }>({
   registerState: { ...INITIAL_STATE },
@@ -18,7 +18,7 @@ export const RegisterContext = createContext<{
 export const RegisterProvider: FC<{
   children: ReactNode
 }> = ({ children }) => {
-  const [registerState, setRegisterState] = useState<RegisterProps>({
+  const [registerState, setRegisterState] = useState<GenericFormProps>({
     ...INITIAL_STATE,
   })
 

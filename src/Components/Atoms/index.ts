@@ -1,4 +1,3 @@
-export { Form } from './Form'
 export { Button } from './Button'
 export { Text } from './Text'
 export { Picture } from './Picture'

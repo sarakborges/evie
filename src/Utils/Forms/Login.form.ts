@@ -1,19 +1,25 @@
-import { LoginFormProps } from 'Utils/Props'
+import { GenericFormStepsProps } from 'Utils/Props'
 
-export const LOGIN_FORM: LoginFormProps = {
-  FIELDS: [
+export const LOGIN_FORM: GenericFormStepsProps = {
+  STEPS: [
     {
-      ID: `login_email`,
-      TYPE: `text`,
-      LABEL: `Your email`,
-      PLACEHOLDER: `user@example.com`,
-    },
+      SUBMIT_TEXT: `Advance`,
 
-    {
-      ID: `login_password`,
-      TYPE: `password`,
-      LABEL: `Your password`,
-      PLACEHOLDER: `Very secure password`,
+      FIELDS: [
+        {
+          ID: `login_email`,
+          TYPE: `text`,
+          LABEL: `Your email`,
+          PLACEHOLDER: `user@example.com`,
+        },
+
+        {
+          ID: `login_password`,
+          TYPE: `password`,
+          LABEL: `Your password`,
+          PLACEHOLDER: `Very secure password`,
+        },
+      ],
     },
   ],
 }

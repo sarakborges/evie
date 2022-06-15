@@ -1,17 +1,21 @@
-import React, { FC, FormEvent } from 'react'
+import React, { FC, FormEvent, useContext } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+
+import { LoginContext } from 'Contexts/Login.context'
 
 import { LOGIN_TEXTS, ROUTES } from 'Utils/Constants'
 import { LOGIN_FORM } from 'Utils/Forms'
 
-import { Button, Form, Text } from 'Components/Atoms'
-import { Field } from 'Components/Molecules'
+import { Text } from 'Components/Atoms'
+import { Form } from 'Components/Organisms'
 
 import * as Styled from './Login.style'
 
 export const LoginTemplate: FC = () => {
   const router = useRouter()
+
+  const { loginState, setLoginState } = useContext(LoginContext)
 
   const doLogin = (e: FormEvent<HTMLFormElement>) => {
     router.push(ROUTES.HOME.PATH)
@@ -31,23 +35,12 @@ export const LoginTemplate: FC = () => {
             {LOGIN_TEXTS.SIGNIN}
           </Text>
 
-          <Form onSubmit={doLogin}>
-            {LOGIN_FORM.FIELDS.map((loginFormItem) => {
-              return (
-                <Field
-                  key={loginFormItem.ID}
-                  id={loginFormItem.ID}
-                  type={loginFormItem.TYPE}
-                  label={loginFormItem.LABEL}
-                  placeholder={loginFormItem.PLACEHOLDER}
-                />
-              )
-            })}
-
-            <Button type="submit" primary>
-              {LOGIN_TEXTS.SUBMIT}
-            </Button>
-          </Form>
+          <Form
+            form={LOGIN_FORM}
+            formState={loginState}
+            setFormState={setLoginState}
+            onSubmit={doLogin}
+          />
 
           <Styled.NotRegistered>
             <Link href={ROUTES.REGISTER.PATH}>
