@@ -18,6 +18,7 @@ export interface FieldsProps {
   REQUIRED?: boolean
   REQUIRED_ERROR?: string
   HELP_TEXT?: string
+  DEFAULT_VALUE?: string
 }
 
 export interface FormItemProps {

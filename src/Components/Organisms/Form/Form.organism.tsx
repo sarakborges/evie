@@ -31,9 +31,47 @@ export const Form: FC<FormProps> = ({
     )
   }
 
-  const validateForm = () => {
-    console.log(form.STEPS[step])
+  const replaceText = (str: string) => {
+    const matchFunction = str.match(/\{.*\}\[.*\]/g)
 
+    matchFunction?.forEach((strMatch) => {
+      if (!!matchFunction.toString().match(/\{slug\}/g)?.length) {
+        const index = strMatch.replace(/\{slug\}\[|\]/g, '')
+
+        if (index.includes('|')) {
+          const indexes = index.split('|')
+
+          indexes.every((indexItem) => {
+            const val = slugify(getValue(indexItem))
+
+            if (!!val) {
+              str = str.replace(strMatch, slugify(val))
+              return false
+            }
+
+            return true
+          })
+
+          return
+        }
+
+        const val = slugify(getValue(index))
+        str = str.replace(strMatch, val)
+      }
+    })
+
+    const matchText = str.match(/\[.*\]/g)
+
+    matchText?.forEach((strMatch) => {
+      const index = strMatch.replace(/\[|\]/g, '')
+      const val = getValue(index)
+      str = str.replace(strMatch, val)
+    })
+
+    return str
+  }
+
+  const validateForm = () => {
     if (
       form.STEPS[step].FIELDS?.some(
         (fieldItem) =>
@@ -141,10 +179,7 @@ export const Form: FC<FormProps> = ({
     <form {...props} onSubmit={handleSubmit}>
       {!!form.STEPS[step].TEXT && (
         <Text fs="32px" fw={300} lh={1.4}>
-          {form.STEPS[step].TEXT?.replace(
-            '[register_name]',
-            getValue('register_name')
-          )}
+          {replaceText(form.STEPS[step].TEXT || '')}
         </Text>
       )}
 
@@ -155,11 +190,14 @@ export const Form: FC<FormProps> = ({
               key={registerFormItem.ID}
               id={registerFormItem.ID}
               type={registerFormItem.TYPE}
-              label={registerFormItem.LABEL}
-              placeholder={registerFormItem.PLACEHOLDER}
-              helpText={registerFormItem.HELP_TEXT}
+              label={replaceText(registerFormItem.LABEL)}
+              placeholder={replaceText(registerFormItem.PLACEHOLDER)}
+              helpText={replaceText(registerFormItem.HELP_TEXT || '')}
               warning={getWarning(registerFormItem.ID)}
-              value={getValue(registerFormItem.ID)}
+              value={
+                getValue(registerFormItem.ID) ||
+                replaceText(registerFormItem.DEFAULT_VALUE || '')
+              }
               options={registerFormItem?.OPTIONS || []}
               onChange={handleChange}
             />

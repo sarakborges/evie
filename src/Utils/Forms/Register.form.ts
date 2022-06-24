@@ -87,9 +87,10 @@ export const REGISTER_FORM: GenericFormStepsProps = {
           ID: `register_profile_name`,
           TYPE: `text`,
           LABEL: `Name displayed on your profile`,
-          PLACEHOLDER: `The way you want people to know you`,
+          PLACEHOLDER: `[The way you want people to know you]`,
           REQUIRED: true,
           REQUIRED_ERROR: `You need to fill this before we can advance.`,
+          DEFAULT_VALUE: `[register_name]`,
         },
 
         {
@@ -98,6 +99,7 @@ export const REGISTER_FORM: GenericFormStepsProps = {
           LABEL: `Profile tag <Use only letters and numbers>`,
           PLACEHOLDER: `mytag`,
           HELP_TEXT: `Your @, and custom URL. If you leave this empty, it will be based on your profile name.`,
+          DEFAULT_VALUE: `{slug}[register_profile_name|register_name]`,
         },
       ],
     },
