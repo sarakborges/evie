@@ -1,9 +1,8 @@
-import React, { FC, useContext, useEffect } from 'react'
+import React, { FC, useContext } from 'react'
 import Link from 'next/link'
 
 import { REGISTER_TEXTS, ROUTES } from 'Utils/Constants'
 import { REGISTER_FORM } from 'Utils/Forms'
-import { FormItemProps } from 'Utils/Props'
 
 import { RegisterContext } from 'Contexts'
 

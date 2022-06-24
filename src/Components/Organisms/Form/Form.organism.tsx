@@ -35,7 +35,7 @@ export const Form: FC<FormProps> = ({
     const matchFunction = str.match(/\{.*\}\[.*\]/g)
 
     matchFunction?.forEach((strMatch) => {
-      if (!!matchFunction.toString().match(/\{slug\}/g)?.length) {
+      if (matchFunction.toString().match(/\{slug\}/g)?.length) {
         const index = strMatch.replace(/\{slug\}\[|\]/g, '')
 
         if (index.includes('|')) {
@@ -44,7 +44,7 @@ export const Form: FC<FormProps> = ({
           indexes.every((indexItem) => {
             const val = slugify(getValue(indexItem))
 
-            if (!!val) {
+            if (val) {
               str = str.replace(strMatch, slugify(val))
               return false
             }

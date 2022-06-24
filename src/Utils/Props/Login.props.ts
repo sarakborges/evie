@@ -1,5 +1,5 @@
-import { FormProps } from './Form.props'
+import { FieldsProps } from './Form.props'
 
 export interface LoginFormProps {
-  FIELDS: FormProps[]
+  FIELDS: FieldsProps[]
 }
