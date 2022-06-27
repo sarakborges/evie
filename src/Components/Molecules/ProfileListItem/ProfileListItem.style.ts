@@ -7,6 +7,12 @@ export const ProfileItem = styled.div`
 
   width: 100%;
   padding: 12px 16px;
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--purpleDark1);
+  }
 `
 
 export const ProfileButtons = styled.div`
