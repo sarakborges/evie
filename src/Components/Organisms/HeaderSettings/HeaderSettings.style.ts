@@ -14,16 +14,14 @@ export const Settings = styled.div`
 
 export const ThemeOptions = styled.div`
   display: flex;
-  place-content: center;
-  gap: 24px;
+  gap: 12px;
 
-  padding: 8px;
-  margin: 0 12px;
+  padding: 8px 20px;
 
-  background-color: var(--purpleDark1);
   border-radius: 22px;
 
   > button {
+    gap: 8px;
     padding: 4px 12px;
 
     border-radius: 14px;
