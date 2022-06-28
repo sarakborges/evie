@@ -21,9 +21,9 @@ export const Picture = styled.div<PictureDivProps>`
     object-fit: cover;
 
     border: ${({ borderWidth }) => `${borderWidth || 1}px`} solid
-      ${({ hasBorder }) => (hasBorder ? 'var(--purple)' : 'transparent')};
+      ${({ hasBorder }) => (hasBorder ? 'var(--main)' : 'transparent')};
     border-radius: 50%;
-    background-color: var(--purpleDark2);
+    background-color: var(--mainDark2);
 
     color: var(--grayLight);
   }

@@ -7,7 +7,7 @@ export const RegisterTemplate = styled.div`
 
   min-height: 100vh;
 
-  background-color: var(--purple);
+  background-color: var(--main);
 `
 
 export const RegisterContent = styled.div`
@@ -44,8 +44,8 @@ export const AlreadyRegistered = styled.div`
     transition: border-color 0.3s, color 0.3s;
 
     &:hover {
-      color: var(--purpleLight2);
-      border-color: var(--purpleLight2);
+      color: var(--mainLight2);
+      border-color: var(--mainLight2);
     }
   }
 `

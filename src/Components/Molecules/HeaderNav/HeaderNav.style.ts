@@ -30,14 +30,14 @@ export const NavLink = styled.p<NavLinkStyleProps>`
     border: solid transparent;
     border-width: 2px 0;
     border-bottom-color: ${({ active }) =>
-      active ? 'var(--purple)' : 'transparent'};
+      active ? 'var(--main)' : 'transparent'};
     background-color: ${({ active }) =>
-      active ? 'var(--purpleDark2)' : 'transparent'};
+      active ? 'var(--mainDark2)' : 'transparent'};
 
     transition: background-color 0.3s, border-bottom-color 0.3s;
 
     &:hover {
-      background-color: var(--purpleDark2);
+      background-color: var(--mainDark2);
     }
   }
 `

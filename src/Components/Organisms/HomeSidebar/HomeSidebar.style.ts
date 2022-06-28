@@ -17,7 +17,7 @@ export const Sidebar = styled.aside`
   overflow: hidden;
   overflow-y: auto;
 
-  background-color: var(--purpleDark2);
+  background-color: var(--mainDark2);
 `
 
 export const Lists = styled.aside`

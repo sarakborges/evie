@@ -8,7 +8,7 @@ export const Buttons = styled.div`
   display: flex;
   flex-direction: column;
 
-  border-top: 1px solid var(--purpleMedium);
+  border-top: 1px solid var(--mainMedium);
 
   > button {
     place-content: flex-start;
@@ -23,7 +23,7 @@ export const Buttons = styled.div`
     }
 
     &:hover {
-      background-color: var(--purpleMedium);
+      background-color: var(--mainMedium);
     }
   }
 `

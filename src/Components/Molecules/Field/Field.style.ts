@@ -34,10 +34,10 @@ export const FieldWrapper = styled.div`
     transition: border-color 0.3s;
 
     &:focus {
-      border-color: var(--purpleLight2);
+      border-color: var(--mainLight2);
 
       & + label {
-        color: var(--purpleLight2);
+        color: var(--mainLight2);
       }
     }
 
@@ -47,7 +47,7 @@ export const FieldWrapper = styled.div`
     }
 
     > option {
-      color: var(--purple);
+      color: var(--main);
     }
   }
 
@@ -95,7 +95,7 @@ export const HelpIcon = styled.div`
   aspect-ratio: 1;
 
   border-radius: 50%;
-  background-color: var(--purpleMedium);
+  background-color: var(--mainMedium);
 `
 
 export const HelpText = styled.div`
@@ -110,7 +110,7 @@ export const HelpText = styled.div`
   padding: 8px;
 
   border-radius: 4px;
-  background-color: var(--purpleMedium);
+  background-color: var(--mainMedium);
 
   opacity: 0;
   visibility: hidden;

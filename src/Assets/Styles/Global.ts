@@ -5,24 +5,28 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
 
   :root {
-    --purple: hsl(255 50% 50% / 100%);
+    --accent: 255;
+    --brightness: 100%;
+    --math: +;
+
+    --main: hsl(var(--accent) 50% 50% / 100%);
     
     --yellowLight: hsl(50 100% 50% / 100%);
 
-    --purpleDark1: hsl(255 20% 15% / 100%);
-    --purpleDark2: hsl(255 20% 20% / 100%);
+    --mainDark1: hsl(var(--accent) 20% calc(var(--brightness) var(--math) 15%) / 100%);
+    --mainDark2: hsl(var(--accent) 20% calc(var(--brightness) var(--math) 20%) / 100%);
 
-    --purpleMedium: hsl(255 20% 30% / 100%);
+    --mainMedium: hsl(var(--accent) 20% calc(var(--brightness) var(--math) 30%) / 100%);
 
-    --purpleLight1: hsl(255 50% 90% / 100%);
-    --purpleLight2: hsl(255 50% 70% / 100%);
+    --mainLight1: hsl(var(--accent) 50% calc(var(--brightness) var(--math) 90%) / 100%);
+    --mainLight2: hsl(var(--accent) 50% calc(var(--brightness) var(--math) 70%) / 100%);
 
-    --grayLight: hsl(0 0% 95% / 100%);
+    --grayLight: hsl(0 0% calc(var(--brightness) var(--math) 95%) / 100%);
     --grayMedium: hsl(0 0% 50% / 100%);
   }
 
   body {
-    background-color: var(--purpleDark1);
+    background-color: var(--mainDark1);
     
     font-family: "Roboto", sans-serif;
     color: var(--grayLight);

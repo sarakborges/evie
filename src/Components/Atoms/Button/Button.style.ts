@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 const PrimaryButton = css`
-  background-color: var(--purple);
+  background-color: var(--main);
   border-radius: 4px;
 
   color: var(--grayLight);
@@ -9,7 +9,7 @@ const PrimaryButton = css`
   transition: box-shadow 0.3s;
 
   &:hover {
-    box-shadow: 0 1px 8px var(--purpleDark2);
+    box-shadow: 0 1px 8px var(--mainDark2);
   }
 `
 
@@ -17,20 +17,20 @@ const SecondaryButton = css`
   background-color: var(--grayLight);
   border-radius: 4px;
 
-  color: var(--purple);
+  color: var(--main);
 
   transition: box-shadow 0.3s;
 
   &:hover {
-    box-shadow: 0 1px 8px var(--purpleDark2);
+    box-shadow: 0 1px 8px var(--mainDark2);
   }
 `
 
 const DarkButton = css`
-  background-color: var(--purpleMedium);
+  background-color: var(--mainMedium);
 
   &:hover {
-    background-color: var(--purpleDark2);
+    background-color: var(--mainDark2);
   }
 `
 
@@ -38,7 +38,7 @@ const TransparentButton = css`
   background-color: transparent;
 
   &:hover {
-    background-color: var(--purpleDark2);
+    background-color: var(--mainDark2);
   }
 `
 
@@ -58,7 +58,8 @@ export const Button = styled.button<ButtonStyleProps>`
 
   padding: 8px;
 
-  border: ${({ bordered }) => (bordered ? '2px solid var(--purple)' : 'none')};
+  border: ${({ bordered }) =>
+    bordered ? '2px solid var(--main)' : '2px solid transparent'};
   border-radius: ${({ rounded }) => (rounded ? '50%' : 0)};
 
   font-size: 12px;
@@ -66,7 +67,7 @@ export const Button = styled.button<ButtonStyleProps>`
 
   cursor: pointer;
 
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 
   ${({ primary }) => primary && PrimaryButton}
   ${({ secondary }) => secondary && SecondaryButton}

@@ -17,6 +17,8 @@ export const NotificationItemConnection: FC<
     notification.profile.url
   )
 
+  const timestamp = getTimeString(notification.time)
+
   return (
     <Styled.NotificationItem>
       <Link href={profileLink}>
@@ -47,8 +49,8 @@ export const NotificationItemConnection: FC<
           <Button primary>{CONNECTIONS_TEXTS.BUTTONS.REFUSE}</Button>
         </Styled.NotificationButtons>
 
-        <Text fs="12px" fc="grayMedium">
-          {getTimeString(notification.time)}
+        <Text fs="12px" fc="grayMedium" key={timestamp}>
+          {timestamp}
         </Text>
       </Styled.NotificationText>
     </Styled.NotificationItem>

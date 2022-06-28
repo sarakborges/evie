@@ -26,7 +26,7 @@ export const ListTitle = styled.div`
     transition: color 0.3s;
 
     &:hover {
-      color: var(--purpleLight2);
+      color: var(--mainLight2);
     }
   }
 `
@@ -69,7 +69,7 @@ export const ListItem = styled.div`
 
     &:hover {
       > p {
-        color: var(--purpleLight2);
+        color: var(--mainLight2);
       }
     }
   }

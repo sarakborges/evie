@@ -9,7 +9,7 @@ export const NotificationItem = styled.div`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: var(--purpleMedium);
+    background-color: var(--mainMedium);
   }
 `
 
@@ -23,7 +23,7 @@ export const NotificationText = styled.div`
 
 export const ProfileName = styled.span`
   > a {
-    color: var(--purpleLight2);
+    color: var(--mainLight2);
   }
 `
 

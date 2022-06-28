@@ -1,17 +1,19 @@
 import React from 'react'
 import type { AppProps } from 'next/app'
 
-import { UserProvider } from 'Contexts'
+import { UserProvider, AppProvider } from 'Contexts'
 
 import { GlobalStyle } from 'Assets/Styles/Global'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <UserProvider>
-      <GlobalStyle />
+    <AppProvider>
+      <UserProvider>
+        <GlobalStyle />
 
-      <Component {...pageProps} />
-    </UserProvider>
+        <Component {...pageProps} />
+      </UserProvider>
+    </AppProvider>
   )
 }
 

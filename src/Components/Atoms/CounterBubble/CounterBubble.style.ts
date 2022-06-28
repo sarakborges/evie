@@ -13,7 +13,7 @@ export const CounterBubble = styled.p`
   width: 20px;
   aspect-ratio: 1;
 
-  background-color: var(--purple);
+  background-color: var(--main);
   border-radius: 50%;
 
   color: var(--grayLight);

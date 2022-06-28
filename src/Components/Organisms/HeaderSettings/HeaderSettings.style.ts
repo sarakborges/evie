@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ThemeTitle = styled.div`
-  padding: 0 24px 8px;
+  padding: 0 24px 4px;
 `
 
 export const Settings = styled.div`
@@ -37,7 +37,8 @@ export const ThemeOptions = styled.div`
 
 export const ColorOptions = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 4px;
+  flex-wrap: wrap;
 
   padding: 8px;
   margin: 0 12px;
@@ -50,33 +51,30 @@ export const ColorOptions = styled.div`
 
     transition: border-color 0.3s;
 
-    > span {
-      display: flex;
-      place-content: center;
-      place-items: center;
-
-      width: 24px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-
-      background-color: var(--purple);
-
-      color: var(--grayLight);
-
-      > svg {
-        width: 12px;
-        aspect-ratio: 1;
-      }
+    &:is(.active, :hover) {
+      border-color: var(--mainMedium);
     }
+  }
+`
 
-    &:is(:nth-child(1), :hover) {
-      border-color: var(--purpleMedium);
-    }
+interface ColorOptionItemProps {
+  accent: number
+}
+export const ColorOptionItem = styled.div<ColorOptionItemProps>`
+  display: flex;
+  place-content: center;
+  place-items: center;
 
-    &:not(:nth-child(1)) {
-      > span {
-        background-color: hsla(345, 50%, 50%, 100%);
-      }
-    }
+  width: 24px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  background-color: hsl(${({ accent }) => accent} 50% 50% / 100%);
+
+  color: var(--grayLight);
+
+  > svg {
+    width: 12px;
+    aspect-ratio: 1;
   }
 `

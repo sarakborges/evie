@@ -20,7 +20,7 @@ export const LoginFormWrapper = styled.div`
   max-width: 600px;
   flex: 1;
 
-  background-color: var(--purpleMedium);
+  background-color: var(--mainMedium);
 `
 
 export const LoginForm = styled.div`
@@ -57,8 +57,8 @@ export const NotRegistered = styled.div`
     transition: border-color 0.3s, color 0.3s;
 
     &:hover {
-      color: var(--purpleLight2);
-      border-color: var(--purpleLight2);
+      color: var(--mainLight2);
+      border-color: var(--mainLight2);
     }
   }
 `

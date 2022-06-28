@@ -11,7 +11,7 @@ export const ProfileItem = styled.div`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: var(--purpleDark1);
+    background-color: var(--mainDark1);
   }
 `
 
