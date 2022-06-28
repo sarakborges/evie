@@ -48,7 +48,7 @@ export const AppProvider: FC<{
     doc?.style.setProperty('--math', `${brightness === 'dark' ? `+` : `-`}`)
 
     localStorage.setItem('theme', JSON.stringify({ ...appState }))
-  }, [accent, brightness])
+  }, [accent, brightness, isLoaded])
 
   useEffect(() => {
     setIsLoaded(true)
