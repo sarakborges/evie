@@ -8,6 +8,103 @@ export const ProfilesMock: ProfileProps[] = [
     picture: `https://pbs.twimg.com/profile_images/1526763285864931329/r6LLyyJ8_400x400.jpg`,
     cover: `https://pbs.twimg.com/profile_banners/1292161689949962240/1650204198/1500x500`,
 
+    chats: [
+      {
+        users: [
+          {
+            _id: '0',
+            name: `Sara Borges`,
+            url: `YoggSara`,
+            picture: `https://pbs.twimg.com/profile_images/1526763285864931329/r6LLyyJ8_400x400.jpg`,
+            cover: `https://pbs.twimg.com/profile_banners/1292161689949962240/1650204198/1500x500`,
+          },
+
+          {
+            _id: '1',
+            name: `Kupcaky`,
+            url: `TheKupcaky`,
+            picture: `https://pbs.twimg.com/profile_images/1515451667134701576/o1Z7uHjY_400x400.jpg`,
+          },
+        ],
+
+        messages: [
+          {
+            _id: '1',
+            text: 'Oi amooooooo',
+            sender: '0',
+            seen: true,
+            time: new Date('Mon Jun 27 2022 22:02:06 GMT-0300'),
+          },
+
+          {
+            _id: '2',
+            text: 'Oi puta',
+            sender: '1',
+            seen: false,
+            time: new Date('Mon Jun 27 2022 22:02:06 GMT-0300'),
+          },
+        ],
+      },
+
+      {
+        users: [
+          {
+            _id: '0',
+            name: `Sara Borges`,
+            url: `YoggSara`,
+            picture: `https://pbs.twimg.com/profile_images/1526763285864931329/r6LLyyJ8_400x400.jpg`,
+            cover: `https://pbs.twimg.com/profile_banners/1292161689949962240/1650204198/1500x500`,
+          },
+
+          {
+            _id: '2',
+            name: `felipe ramos`,
+            url: `ZackyStardust`,
+            picture: `https://pbs.twimg.com/profile_images/1468733368170950658/7wk3LnVH_400x400.jpg`,
+          },
+        ],
+
+        messages: [
+          {
+            _id: '1',
+            text: 'lipo',
+            sender: '0',
+            seen: true,
+            time: new Date('Mon Jun 27 2022 22:02:06 GMT-0300'),
+          },
+        ],
+      },
+
+      {
+        users: [
+          {
+            _id: '0',
+            name: `Sara Borges`,
+            url: `YoggSara`,
+            picture: `https://pbs.twimg.com/profile_images/1526763285864931329/r6LLyyJ8_400x400.jpg`,
+            cover: `https://pbs.twimg.com/profile_banners/1292161689949962240/1650204198/1500x500`,
+          },
+
+          {
+            _id: '4',
+            name: `Wally, o Amoroso`,
+            url: `lawsofvalor`,
+            picture: `https://pbs.twimg.com/profile_images/1497582901839503360/raVkWqnl_400x400.jpg`,
+          },
+        ],
+
+        messages: [
+          {
+            _id: '1',
+            text: 'coé gostosa',
+            sender: '4',
+            seen: true,
+            time: new Date('Mon Jun 27 2022 22:02:06 GMT-0300'),
+          },
+        ],
+      },
+    ],
+
     connections: [
       {
         _id: '1',

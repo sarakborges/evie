@@ -15,7 +15,7 @@ export const ROUTES = {
   },
 
   MESSAGES: {
-    PATH: '/messages',
+    PATH: '/messages/[url]',
     TITLE: 'Messages',
   },
 

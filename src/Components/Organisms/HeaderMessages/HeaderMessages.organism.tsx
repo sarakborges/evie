@@ -3,10 +3,9 @@ import { Message3 } from '@styled-icons/remix-line/Message3'
 
 import { MESSAGES } from 'Utils/Constants'
 
-import { Button, Text } from 'Components/Atoms'
+import { Button } from 'Components/Atoms'
 import { Dropdown } from 'Components/Molecules'
-
-import * as Styled from './HeaderMessages.style'
+import { ChatsList } from 'Components/Organisms/ChatsList'
 
 export const HeaderMessages: FC = () => {
   const dropdownRef = useRef<ElementRef<typeof Dropdown>>(null)
@@ -20,11 +19,7 @@ export const HeaderMessages: FC = () => {
         title={MESSAGES.TITLE}
         hasCloseButton
       >
-        <div>
-          <Styled.NoMessages>
-            <Text lh={1.4}>{MESSAGES.NONE}</Text>
-          </Styled.NoMessages>
-        </div>
+        <ChatsList />
       </Dropdown>
 
       <Button

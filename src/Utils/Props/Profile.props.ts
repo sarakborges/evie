@@ -1,3 +1,5 @@
+import { ChatProps } from 'Utils/Props'
+
 export interface ProfileProps {
   _id: string
   name: string
@@ -6,4 +8,5 @@ export interface ProfileProps {
   cover?: string
   connections?: ProfileProps[]
   groups?: ProfileProps[]
+  chats?: ChatProps[]
 }

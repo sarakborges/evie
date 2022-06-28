@@ -13,6 +13,8 @@ export const GlobalStyle = createGlobalStyle`
     
     --yellowLight: hsl(50 100% 50% / 100%);
 
+    --redMedium: hsl(340 70% 50% / 100%);
+
     --mainDark1: hsl(var(--accent) 20% calc(var(--brightness) var(--math) 15%) / 100%);
     --mainDark2: hsl(var(--accent) 20% calc(var(--brightness) var(--math) 20%) / 100%);
 

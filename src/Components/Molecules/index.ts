@@ -10,3 +10,4 @@ export { HeaderLogout } from './HeaderLogout'
 
 export { NotificationItemConnection } from './NotificationItemConnection'
 export { ProfileListItem } from './ProfileListItem'
+export { ChatsListProfileItem } from './ChatsListProfileItem'

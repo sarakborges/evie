@@ -4,7 +4,7 @@ export const HEADER_PROFILE = {
 
 export const MESSAGES = {
   TITLE: `Messages`,
-  NONE: `No new messages.`,
+  NONE: `Currently, you have no chats active. Start talking to people!`,
 }
 
 export const PRONOUNS = ['He/him', 'She/her', 'They/them', 'Other']

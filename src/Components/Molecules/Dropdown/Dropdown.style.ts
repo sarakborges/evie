@@ -22,6 +22,7 @@ export const Dropdown = styled.div<DropdownStyleProps>`
 
   border-radius: 16px 0 16px 16px;
   background-color: var(--mainDark2);
+  box-shadow: 0 2px 3px var(--mainDark1);
 
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};

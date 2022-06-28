@@ -49,15 +49,17 @@ export const ProfileListItem: FC<ProfileListItemProps> = ({
         </Text>
       </Styled.ProfileText>
 
-      <Styled.ProfileButtons>
-        {buttons.map((buttonItem) => {
-          return (
-            <Fragment key={buttonItem}>
-              {buttonsComponents[buttonItem]()}
-            </Fragment>
-          )
-        })}
-      </Styled.ProfileButtons>
+      {buttons?.length && (
+        <Styled.ProfileButtons>
+          {buttons.map((buttonItem) => {
+            return (
+              <Fragment key={buttonItem}>
+                {buttonsComponents[buttonItem]()}
+              </Fragment>
+            )
+          })}
+        </Styled.ProfileButtons>
+      )}
     </Styled.ProfileItem>
   )
 }

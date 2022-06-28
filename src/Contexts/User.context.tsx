@@ -26,6 +26,7 @@ const INITIAL_STATE = {
     picture: '',
     cover: '',
 
+    chats: [],
     connections: [],
     groups: [],
   },

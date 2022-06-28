@@ -9,3 +9,4 @@ export { HeaderMessages } from './HeaderMessages'
 export { HeaderUser } from './HeaderUser'
 
 export { ProfilesList } from './ProfilesList'
+export { ChatsList } from './ChatsList'
