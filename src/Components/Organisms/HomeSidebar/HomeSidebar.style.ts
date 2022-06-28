@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Sidebar = styled.aside`
-  position: sticky;
+  position: fixed;
   left: 0;
   top: 64px;
   z-index: 2;

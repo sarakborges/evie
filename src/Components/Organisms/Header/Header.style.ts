@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Header = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
@@ -10,6 +10,7 @@ export const Header = styled.header`
   place-items: center;
   place-content: space-between;
 
+  width: 100%;
   height: 64px;
 
   background-color: var(--mainDark1);

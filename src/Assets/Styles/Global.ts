@@ -27,6 +27,10 @@ export const GlobalStyle = createGlobalStyle`
     --grayMedium: hsl(0 0% 50% / 100%);
   }
 
+  html{
+    scrollbar-width: thin;
+  }
+
   body {
     background-color: var(--mainDark1);
     

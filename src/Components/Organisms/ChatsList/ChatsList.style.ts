@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ChatsList = styled.div`
+export const ChatsListWrapper = styled.div`
   display: flex;
   flex-flow: column;
   place-content: center;
@@ -10,6 +10,11 @@ export const ChatsList = styled.div`
   flex: 1;
   overflow: hidden;
   overflow-y: auto;
+`
+
+export const Filter = styled.div`
+  width: 100%;
+  padding: 8px 16px 24px;
 `
 
 export const ChatList = styled.div`

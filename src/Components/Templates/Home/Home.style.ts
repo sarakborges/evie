@@ -3,11 +3,12 @@ import styled from 'styled-components'
 export const HomeTemplate = styled.div`
   display: flex;
   flex: 1;
-  place-content: space-between;
+
+  padding: 0 320px;
 `
 
 export const ChatBar = styled.aside`
-  position: sticky;
+  position: fixed;
   right: 0;
   top: 64px;
   z-index: 2;

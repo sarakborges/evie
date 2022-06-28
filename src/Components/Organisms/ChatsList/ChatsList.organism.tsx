@@ -6,12 +6,12 @@ import { UserContext } from 'Contexts'
 import { MESSAGES } from 'Utils/Constants'
 
 import { Text } from 'Components/Atoms'
-import { ChatsListProfileItem } from 'Components/Molecules'
+import { ChatsListProfileItem, Field } from 'Components/Molecules'
 
 import { ChatsListProps } from './ChatsList.props'
 import * as Styled from './ChatsList.style'
 
-export const ChatsList: FC<ChatsListProps> = ({ title }) => {
+export const ChatsList: FC<ChatsListProps> = ({ title, hasFilter }) => {
   const {
     userState: { currentProfile },
   } = useContext(UserContext)
@@ -19,13 +19,23 @@ export const ChatsList: FC<ChatsListProps> = ({ title }) => {
   const { chats } = currentProfile
 
   return (
-    <Styled.ChatsList>
+    <Styled.ChatsListWrapper>
       {chats?.length ? (
         <>
           {title && (
             <Text lh={3} fw={700}>
               {title}
             </Text>
+          )}
+
+          {hasFilter && (
+            <Styled.Filter>
+              <Field
+                id="chats_filter"
+                label={MESSAGES.FILTER_LABEL}
+                placeholder={MESSAGES.FILTER_PLACEHOLDER}
+              />
+            </Styled.Filter>
           )}
 
           <Styled.ChatList>
@@ -57,6 +67,6 @@ export const ChatsList: FC<ChatsListProps> = ({ title }) => {
           <Text lh={1.6}>{MESSAGES.NONE}</Text>
         </Styled.NoMessages>
       )}
-    </Styled.ChatsList>
+    </Styled.ChatsListWrapper>
   )
 }
