@@ -13,8 +13,7 @@ export const ProfileItem = styled.div<ProfileItemProps>`
 
   border-width: 0 4px;
   border-style: solid;
-  border-left-color: ${({ seen }) =>
-    seen ? 'transparent' : 'var(--redMedium)'};
+  border-left-color: ${({ seen }) => (seen ? 'transparent' : 'var(--main)')};
   border-right-color: transparent;
   background-color: ${({ seen }) =>
     seen ? 'transparent' : 'var(--mainDark1)'};
