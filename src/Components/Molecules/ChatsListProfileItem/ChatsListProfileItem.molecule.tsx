@@ -4,6 +4,7 @@ import { ArrowBarLeft } from '@styled-icons/bootstrap/ArrowBarLeft'
 
 import { ROUTES } from 'Utils/Constants'
 import { getTimeString } from 'Utils/Functions'
+
 import { Picture, Text } from 'Components/Atoms'
 
 import { ChatsListProfileItemProps } from './ChatsListProfileItem.props'
@@ -34,7 +35,7 @@ export const ChatsListProfileItem: FC<ChatsListProfileItemProps> = ({
             </Styled.ProfileName>
 
             <Styled.Message>
-              {message?.sender !== profile?._id && <ArrowBarLeft />}
+              {message?.sender !== profile?._id && <b>You:</b>}
 
               <Text fs="12px">{message?.text}</Text>
             </Styled.Message>

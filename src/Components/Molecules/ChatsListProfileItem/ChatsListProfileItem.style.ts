@@ -74,6 +74,8 @@ export const Message = styled.div`
   flex: 1;
   overflow: hidden;
 
+  font-size: 12px;
+
   > p {
     max-width: 100%;
     flex: 1;
@@ -83,10 +85,7 @@ export const Message = styled.div`
     white-space: nowrap;
   }
 
-  > svg {
-    min-width: 16px;
-    max-width: 16px;
-
-    fill: var(--mainLight2);
+  > b {
+    font-weight: 700;
   }
 `

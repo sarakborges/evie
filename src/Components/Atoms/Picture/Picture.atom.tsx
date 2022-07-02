@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { Question } from '@styled-icons/bootstrap/Question'
 
 import { PictureProps } from './Picture.props'
@@ -12,9 +12,21 @@ export const Picture: FC<PictureProps> = ({
   hasBorder,
   borderWidth,
 }) => {
+  const [hasError, setHasError] = useState(false)
+
   return (
     <Styled.Picture size={size} hasBorder={hasBorder} borderWidth={borderWidth}>
-      {image ? <img src={image} alt={alt} /> : <Question />}
+      {image && !hasError ? (
+        <img
+          src={image}
+          alt={alt}
+          onError={() => {
+            setHasError(true)
+          }}
+        />
+      ) : (
+        <Question />
+      )}
     </Styled.Picture>
   )
 }
