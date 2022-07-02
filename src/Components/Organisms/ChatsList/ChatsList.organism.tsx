@@ -11,7 +11,11 @@ import { ChatsListProfileItem, Field } from 'Components/Molecules'
 import { ChatsListProps } from './ChatsList.props'
 import * as Styled from './ChatsList.style'
 
-export const ChatsList: FC<ChatsListProps> = ({ title, hasFilter }) => {
+export const ChatsList: FC<ChatsListProps> = ({
+  title,
+  hasFilter,
+  onlyUnread,
+}) => {
   const {
     userState: { currentProfile },
   } = useContext(UserContext)
@@ -39,23 +43,33 @@ export const ChatsList: FC<ChatsListProps> = ({ title, hasFilter }) => {
           )}
 
           <Styled.ChatList>
-            {chats.map((chatItem) => {
-              return (
-                <ChatsListProfileItem
-                  key={
-                    chatItem.users.find(
-                      (userItem) => userItem._id !== currentProfile._id
-                    )!._id
-                  }
-                  profile={
-                    chatItem.users.find(
-                      (userItem) => userItem._id !== currentProfile._id
-                    )!
-                  }
-                  message={chatItem.messages[chatItem.messages.length - 1]}
-                />
-              )
-            })}
+            {chats
+              .filter((chatItem) => {
+                if (!onlyUnread) {
+                  return true
+                }
+
+                if (!chatItem.messages[chatItem.messages.length - 1].seen) {
+                  return true
+                }
+              })
+              .map((chatItem) => {
+                return (
+                  <ChatsListProfileItem
+                    key={
+                      chatItem.users.find(
+                        (userItem) => userItem._id !== currentProfile._id
+                      )!._id
+                    }
+                    profile={
+                      chatItem.users.find(
+                        (userItem) => userItem._id !== currentProfile._id
+                      )!
+                    }
+                    message={chatItem.messages[chatItem.messages.length - 1]}
+                  />
+                )
+              })}
           </Styled.ChatList>
         </>
       ) : (

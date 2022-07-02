@@ -37,7 +37,7 @@ export const Header = styled.div`
   place-content: space-between;
   place-items: center;
 
-  padding: 8px 16px;
+  padding: 8px 8px 8px 16px;
 `
 
 export const CloseButton = styled.div`

@@ -103,6 +103,35 @@ export const ProfilesMock: ProfileProps[] = [
           },
         ],
       },
+
+      {
+        users: [
+          {
+            _id: '0',
+            name: `Sara Borges`,
+            url: `YoggSara`,
+            picture: `https://pbs.twimg.com/profile_images/1526763285864931329/r6LLyyJ8_400x400.jpg`,
+            cover: `https://pbs.twimg.com/profile_banners/1292161689949962240/1650204198/1500x500`,
+          },
+
+          {
+            _id: '3',
+            name: `Esquila 🐿️`,
+            url: `TayEsquila`,
+            picture: `https://pbs.twimg.com/profile_images/1403978167811858436/sGlne6DU_400x400.png`,
+          },
+        ],
+
+        messages: [
+          {
+            _id: '1',
+            text: 'oi bb',
+            sender: '1',
+            seen: true,
+            time: new Date('Mon Jun 27 2022 22:02:06 GMT-0300'),
+          },
+        ],
+      },
     ],
 
     connections: [

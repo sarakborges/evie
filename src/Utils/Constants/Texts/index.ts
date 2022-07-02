@@ -7,6 +7,8 @@ export const MESSAGES = {
   NONE: `Currently, you have no chats active. Start talking to people!`,
   FILTER_LABEL: `Filter your messages`,
   FILTER_PLACEHOLDER: `Someone's name`,
+  SENDER: `You:`,
+  SEE_ALL: `See all messages`,
 }
 
 export const PRONOUNS = ['He/him', 'She/her', 'They/them', 'Other']
