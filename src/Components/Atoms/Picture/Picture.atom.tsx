@@ -13,20 +13,24 @@ export const Picture: FC<PictureProps> = ({
   borderWidth,
 }) => {
   const [hasError, setHasError] = useState(false)
+  const [hasLoaded, setHasLoaded] = useState(false)
 
   return (
     <Styled.Picture size={size} hasBorder={hasBorder} borderWidth={borderWidth}>
-      {image && !hasError ? (
+      {image && !hasError && (
         <img
           src={image}
           alt={alt}
           onError={() => {
             setHasError(true)
           }}
+          onLoad={() => {
+            setHasLoaded(true)
+          }}
         />
-      ) : (
-        <Question />
       )}
+
+      {(hasError || !hasLoaded) && <Question />}
     </Styled.Picture>
   )
 }

@@ -10,16 +10,23 @@ export const Picture = styled.div<PictureDivProps>`
   place-content: center;
   place-items: center;
 
+  position: relative;
+
   width: ${({ size }) => `${size || 40}px`};
   min-width: ${({ size }) => `${size || 40}px`};
+  aspect-ratio: 1;
 
   > :is(img, svg) {
     display: flex;
     place-content: center;
     place-items: center;
 
-    max-width: 100%;
-    aspect-ratio: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
     padding: ${({ hasBorder }) => (hasBorder ? '4px' : '0')};
     overflow: hidden;
 
@@ -33,10 +40,14 @@ export const Picture = styled.div<PictureDivProps>`
   }
 
   > img {
+    z-index: 1;
+
     background-color: var(--mainDark2);
   }
 
   > svg {
+    z-index: 2;
+
     background-color: var(--main);
   }
 `
